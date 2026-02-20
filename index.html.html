@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoyalHope Home Based Care – Professional Care at the Comfort of Home</title>
+<meta name="description" content="RoyalHope Home Based Care provides professional, compassionate nursing care at home across Kenya. Elderly care, wound dressing, chronic illness management and more.">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a3a5c;--navy-dark:#0f2439;
+  --green:#2e7d4f;--green-light:#4caf80;--green-pale:#e8f5ee;
+  --gold:#c8a535;--teal:#1e6e5e;
+  --bg:#f5f8f5;--white:#fff;
+  --text:#2c3e50;--muted:#637589;--border:#dce8df;
+  --shadow:0 4px 28px rgba(26,58,92,.10);
+  --shadow-sm:0 2px 12px rgba(26,58,92,.07);
+  --r:18px;--r-sm:12px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
+body{font-family:'Source Sans 3',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;font-size:16px;line-height:1.65}
+img{display:block;width:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+
+/* ═══ NAV ═══ */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);padding:10px 24px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 1px 16px rgba(26,58,92,.09);}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-logo img{height:48px;width:auto;object-fit:contain}
+.nav-logo-text .brand{font-family:'Lora',serif;font-size:16px;font-weight:700;color:var(--navy);line-height:1.1}
+.nav-logo-text .sub{font-size:11px;color:var(--green);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-links{display:flex;gap:24px;list-style:none}
+.nav-links a{font-weight:600;font-size:14px;color:var(--navy);transition:color .2s}
+.nav-links a:hover{color:var(--green)}
+.nav-cta{background:var(--green);color:#fff;padding:11px 22px;border-radius:50px;font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:background .2s}
+.nav-cta:hover{background:var(--teal)}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.hamburger span{display:block;width:25px;height:2.5px;background:var(--navy);border-radius:2px}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}}
+
+/* ═══ MOBILE MENU ═══ */
+.mob-menu{display:none;flex-direction:column;position:fixed;top:69px;left:0;right:0;bottom:0;background:#fff;z-index:490;padding:16px 22px;overflow-y:auto}
+.mob-menu.open{display:flex}
+.mob-menu a{font-weight:600;font-size:17px;color:var(--navy);padding:15px 4px;border-bottom:1px solid #edf2ef;display:flex;align-items:center;gap:10px}
+.mob-menu a.wa{color:#128C7E}
+.mob-cta{padding:20px 4px 0}
+.mob-cta a{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--green);color:#fff;padding:17px;border-radius:14px;font-size:16px;font-weight:700;border-bottom:none!important;text-decoration:none}
+
+/* ═══ HERO ═══ */
+.hero{min-height:100vh;background:linear-gradient(150deg,#e4f0ea 0%,#d5e7f5 55%,#e4f0ea 100%);display:flex;align-items:center;justify-content:center;padding:100px 24px 60px;position:relative;overflow:hidden}
+.hero-inner{max-width:1100px;width:100%;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+@media(max-width:768px){.hero-inner{grid-template-columns:1fr;text-align:center}}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(46,125,79,.12);color:var(--green);padding:7px 18px;border-radius:50px;font-size:13px;font-weight:700;margin-bottom:20px;border:1px solid rgba(46,125,79,.22)}
+.hero h1{font-family:'Lora',serif;font-size:clamp(2rem,4vw,3.4rem);color:var(--navy);line-height:1.2;margin-bottom:18px}
+.hero h1 em{color:var(--green);font-style:normal}
+.hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.75;margin-bottom:28px;max-width:480px}
+@media(max-width:768px){.hero-sub{margin:0 auto 28px}}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:768px){.hero-btns{justify-content:center}}
+.btn-g{background:var(--green);color:#fff;padding:16px 28px;border-radius:14px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 18px rgba(46,125,79,.32);transition:background .2s;white-space:nowrap}
+.btn-g:hover{background:var(--teal)}
+.btn-w{background:#fff;color:var(--navy);padding:15px 28px;border-radius:14px;font-size:15px;font-weight:700;border:2px solid #c5d7e3;display:inline-flex;align-items:center;gap:8px;transition:all .2s;white-space:nowrap}
+.btn-w:hover{border-color:var(--navy);background:#f0f6fb}
+.hero-image-stack{position:relative}
+.hero-main-img{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3}
+.hero-main-img img{height:100%;object-fit:cover}
+.hero-badge-float{position:absolute;bottom:-16px;left:-16px;background:#fff;border-radius:16px;padding:14px 18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:10px}
+.hero-badge-float .icon{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--green),var(--green-light));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.hbf-text strong{display:block;font-size:.85rem;font-weight:700;color:var(--navy)}
+.hbf-text span{font-size:.75rem;color:var(--muted)}
+@media(max-width:768px){.hero-image-stack{margin-top:36px}.hero-badge-float{bottom:-12px;left:8px}}
+
+/* ═══ TRUST BAR ═══ */
+.trust-bar{background:var(--navy);display:grid;grid-template-columns:repeat(4,1fr)}
+@media(max-width:600px){.trust-bar{grid-template-columns:repeat(2,1fr)}}
+.trust-item{padding:22px 14px;text-align:center;border-right:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+.trust-num{font-family:'Lora',serif;font-size:1.9rem;color:var(--gold);font-weight:700;line-height:1}
+.trust-lbl{color:rgba(255,255,255,.7);font-size:12px;margin-top:5px;font-weight:600}
+
+/* ═══ SHARED ═══ */
+section{padding:72px 24px}
+.wrap{max-width:1100px;margin:0 auto}
+.wrap-sm{max-width:720px;margin:0 auto}
+.sec-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(46,125,79,.1);color:var(--green);padding:5px 14px;border-radius:50px;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
+.sec-h{font-family:'Lora',serif;font-size:clamp(1.7rem,3.5vw,2.4rem);color:var(--navy);margin-bottom:14px;line-height:1.22}
+.sec-sub{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:36px;max-width:600px}
+
+/* ═══ ABOUT ═══ */
+#about{background:#fff}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.about-img-wrap{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:4/3}
+.about-img-wrap img{height:100%;object-fit:cover}
+.about-body{color:var(--text);font-size:1rem;line-height:1.75;margin-bottom:16px}
+.about-body strong{color:var(--navy)}
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.val-item{display:flex;align-items:center;gap:10px;background:var(--green-pale);border-radius:10px;padding:12px 14px}
+.val-icon{font-size:20px;flex-shrink:0}
+.val-text{font-weight:600;color:var(--navy);font-size:.9rem}
+
+/* ═══ BOOKING (before services) ═══ */
+#book{background:var(--bg)}
+.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+@media(max-width:900px){.book-grid{grid-template-columns:1fr}}
+.book-intro h2{font-family:'Lora',serif;font-size:clamp(1.5rem,3vw,2rem);color:var(--navy);margin-bottom:14px}
+.book-intro p{color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:24px}
+.wa-contacts{display:flex;flex-direction:column;gap:12px;margin-bottom:20px}
+.wa-contact{display:flex;align-items:center;gap:14px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:16px;padding:15px 18px;transition:border-color .2s}
+.wa-contact:hover{border-color:var(--green)}
+.wa-icon{width:46px;height:46px;border-radius:50%;flex-shrink:0;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 12px rgba(37,211,102,.35)}
+.wa-icon svg{width:24px;height:24px;fill:#fff}
+.wa-ct strong{display:block;color:var(--navy);font-size:.95rem;font-weight:700}
+.wa-ct span{color:var(--muted);font-size:.8rem}
+.wa-arr{margin-left:auto;color:var(--green);font-size:22px;font-weight:700;flex-shrink:0}
+.book-note{background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:16px;padding:22px 20px;color:#fff;margin-top:16px}
+.book-note h4{font-family:'Lora',serif;font-size:1.05rem;margin-bottom:8px}
+.book-note p{font-size:.88rem;line-height:1.65;color:rgba(255,255,255,.82)}
+
+/* FORM */
+.form-card{background:#fff;border-radius:22px;padding:32px 28px;box-shadow:var(--shadow)}
+@media(max-width:600px){.form-card{padding:24px 18px}}
+.form-card h3{font-family:'Lora',serif;font-size:1.35rem;color:var(--navy);margin-bottom:22px}
+.fg{margin-bottom:16px}
+.fg label{display:block;font-weight:700;color:var(--navy);font-size:13px;margin-bottom:7px;letter-spacing:.2px}
+.fg input,.fg select,.fg textarea{width:100%;padding:14px 16px;border:1.5px solid #d0dde8;border-radius:var(--r-sm);font-family:'Source Sans 3',sans-serif;font-size:16px;color:var(--text);background:#fff;outline:none;transition:border-color .2s;-webkit-appearance:none;appearance:none}
+.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23637589' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(46,125,79,.1)}
+.fg textarea{resize:vertical;min-height:88px;line-height:1.55}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:480px){.fg-row{grid-template-columns:1fr}}
+.form-btn{width:100%;background:var(--green);color:#fff;padding:17px;border-radius:14px;border:none;font-size:16px;font-weight:700;cursor:pointer;font-family:'Source Sans 3',sans-serif;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 18px rgba(46,125,79,.3);transition:background .2s;margin-top:4px}
+.form-btn:hover{background:var(--teal)}
+.form-btn:active{transform:scale(.98)}
+.form-btn svg{width:20px;height:20px;fill:#fff}
+.form-note{text-align:center;color:var(--muted);font-size:13px;margin-top:10px;line-height:1.5}
+
+/* ═══ SERVICES ═══ */
+#services{background:#fff}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:540px){.svc-grid{grid-template-columns:1fr}}
+.svc-card{background:var(--bg);border-radius:var(--r);overflow:hidden;border:1.5px solid var(--border);transition:border-color .2s,box-shadow .2s;display:flex;flex-direction:column}
+.svc-card:hover{border-color:var(--green);box-shadow:0 6px 24px rgba(46,125,79,.12)}
+.svc-img-wrap{width:100%;height:170px;overflow:hidden;background:#d0dde8;flex-shrink:0;position:relative}
+.svc-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.svc-card:hover .svc-img-wrap img{transform:scale(1.04)}
+.svc-body{padding:18px 16px;display:flex;flex-direction:column;gap:7px;flex:1}
+.svc-top{display:flex;align-items:center;gap:10px}
+.svc-icon{width:38px;height:38px;border-radius:10px;flex-shrink:0;background:linear-gradient(135deg,var(--green),var(--green-light));display:flex;align-items:center;justify-content:center;font-size:18px}
+.svc-card h3{font-size:.95rem;font-weight:700;color:var(--navy);line-height:1.3}
+.svc-card p{color:var(--muted);font-size:.84rem;line-height:1.6}
+
+/* ═══ HOW IT WORKS ═══ */
+#how{background:var(--bg)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+@media(max-width:768px){.steps-grid{grid-template-columns:1fr;gap:0}}
+.step-item{padding:24px 20px;text-align:center;position:relative}
+.step-item:not(:last-child)::after{content:'';position:absolute;top:36px;right:-1px;width:2px;height:40%;background:linear-gradient(var(--green-light),var(--border));display:block}
+@media(max-width:768px){.step-item:not(:last-child)::after{top:auto;right:auto;bottom:-1px;left:50%;transform:translateX(-50%);width:40%;height:2px}}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:1.1rem;font-weight:700;margin:0 auto 14px}
+.step-item h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.step-item p{color:var(--muted);font-size:.875rem;line-height:1.6}
+
+/* ═══ WHY US ═══ */
+#why{background:#fff}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.why-grid{grid-template-columns:1fr}}
+.why-card{background:var(--bg);border-radius:var(--r);padding:26px 22px;border:1.5px solid var(--border);transition:border-color .2s,box-shadow .2s}
+.why-card:hover{border-color:var(--green);box-shadow:var(--shadow-sm)}
+.why-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--green),var(--green-light));display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px;box-shadow:0 3px 12px rgba(46,125,79,.28)}
+.why-card h3{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+.why-card p{color:var(--muted);font-size:.875rem;line-height:1.6}
+
+/* ═══ TESTIMONIALS ═══ */
+#testimonials{background:var(--bg)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:900px){.testi-grid{grid-template-columns:1fr}}
+.testi-card{background:#fff;border-radius:var(--r);padding:26px 22px;border-left:4px solid var(--green);box-shadow:var(--shadow-sm)}
+.stars{color:var(--gold);font-size:15px;margin-bottom:10px}
+.testi-q{font-family:'Lora',serif;font-style:italic;color:var(--navy);font-size:.95rem;line-height:1.7;margin-bottom:16px}
+.testi-auth{display:flex;align-items:center;gap:10px}
+.testi-av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--green));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-size:1rem;font-weight:700;flex-shrink:0}
+.testi-name strong{display:block;color:var(--navy);font-size:.88rem;font-weight:700}
+.testi-name span{color:var(--muted);font-size:.77rem}
+
+/* ═══ REGIONS ═══ */
+#regions{background:#fff}
+.reg-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+@media(max-width:900px){.reg-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:540px){.reg-grid{grid-template-columns:repeat(2,1fr)}}
+.reg-card{border-radius:16px;overflow:hidden;box-shadow:var(--shadow-sm);background:#fff;transition:transform .2s,box-shadow .2s}
+.reg-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.reg-img-wrap{height:110px;overflow:hidden;background:#d0dde8}
+.reg-img-wrap img{height:100%;object-fit:cover;transition:transform .4s}
+.reg-card:hover .reg-img-wrap img{transform:scale(1.05)}
+.reg-info{padding:11px 12px}
+.reg-info h4{color:var(--navy);font-size:.85rem;font-weight:700;margin-bottom:2px}
+.reg-info p{color:var(--muted);font-size:.75rem}
+
+/* ═══ CTA BAND ═══ */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);padding:60px 24px;text-align:center}
+.cta-band h2{font-family:'Lora',serif;font-size:clamp(1.5rem,3.5vw,2.2rem);color:#fff;margin-bottom:14px}
+.cta-band p{color:rgba(255,255,255,.78);font-size:1rem;line-height:1.7;max-width:480px;margin:0 auto 28px}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-wa{display:inline-flex;align-items:center;gap:10px;background:#25d366;color:#fff;padding:16px 28px;border-radius:14px;font-size:15px;font-weight:700;box-shadow:0 4px 18px rgba(37,211,102,.4);transition:background .2s}
+.cta-wa:hover{background:#1da851}
+.cta-wa svg{width:20px;height:20px;fill:#fff}
+.cta-call{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:15px;font-weight:600;padding:10px 20px;border:2px solid rgba(255,255,255,.3);border-radius:14px;transition:all .2s}
+.cta-call:hover{background:rgba(255,255,255,.1)}
+
+/* ═══ FOOTER ═══ */
+footer{background:var(--navy-dark);color:rgba(255,255,255,.72);padding:56px 24px 32px}
+.foot-inner{max-width:1100px;margin:0 auto}
+.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:900px){.foot-top{grid-template-columns:1fr 1fr}}
+@media(max-width:500px){.foot-top{grid-template-columns:1fr}}
+.foot-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.foot-logo-row img{height:50px;width:auto;object-fit:contain}
+.foot-brand .nm{font-family:'Lora',serif;font-size:1.2rem;color:#fff}
+.foot-brand .tg{font-size:12px;color:var(--gold);font-weight:600}
+.foot-desc{font-size:14px;line-height:1.75;margin-bottom:20px;max-width:280px}
+.foot-contacts a{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.75);font-size:14px;margin-bottom:10px;transition:color .2s}
+.foot-contacts a:hover{color:var(--gold)}
+.foot-contacts svg{width:16px;height:16px;fill:var(--gold);flex-shrink:0}
+.foot-col h4{color:#fff;font-size:14px;font-weight:700;margin-bottom:14px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-col ul li a{color:rgba(255,255,255,.62);font-size:14px;transition:color .2s}
+.foot-col ul li a:hover{color:var(--gold)}
+.foot-div{border:none;border-top:1px solid rgba(255,255,255,.09);margin:0 0 20px}
+.foot-bottom{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:13px;color:rgba(255,255,255,.38)}
+.foot-bottom em{color:var(--gold);font-style:italic}
+
+/* ═══ FLOAT WA ═══ */
+.wa-fab{position:fixed;bottom:22px;right:18px;z-index:600;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+.wa-fab-opts{display:none;flex-direction:column;gap:8px;align-items:flex-end}
+.wa-fab-opts.open{display:flex}
+.wa-opt{display:flex;align-items:center;gap:10px;background:#fff;border-radius:50px;padding:10px 18px;box-shadow:0 4px 18px rgba(0,0,0,.13);white-space:nowrap;font-weight:700;font-size:14px;color:var(--navy);transition:background .2s}
+.wa-opt:hover{background:#f0fdf4}
+.opt-dot{width:30px;height:30px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.opt-dot svg{width:15px;height:15px;fill:#fff}
+.wa-fab-main{width:58px;height:58px;border-radius:50%;background:#25d366;border:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 22px rgba(37,211,102,.5);cursor:pointer;animation:pulse 2.5s ease-in-out infinite}
+.wa-fab-main svg{width:30px;height:30px;fill:#fff}
+@keyframes pulse{0%,100%{box-shadow:0 4px 22px rgba(37,211,102,.5)}50%{box-shadow:0 4px 36px rgba(37,211,102,.75)}}
+
+/* ═══ TOAST ═══ */
+#toast{position:fixed;bottom:92px;left:50%;transform:translateX(-50%) translateY(16px);background:var(--green);color:#fff;padding:13px 24px;border-radius:50px;font-weight:700;font-size:14px;z-index:700;opacity:0;transition:all .3s ease;pointer-events:none;white-space:nowrap;box-shadow:0 4px 20px rgba(46,125,79,.4)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ═══ REVEAL ═══ */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease}
+.reveal.vis{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<div id="toast"></div>
+
+<!-- WA SVG REUSED -->
+<svg style="display:none"><symbol id="wa-ico" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol></svg>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav>
+  <a href="#home" class="nav-logo">
+    <img src="https://i.ibb.co/HLj4dP2s/5dd38ab5-ef55-486b-a843-2b580240d692.png" alt="RoyalHope Logo" onerror="this.style.display='none'">
+    <div class="nav-logo-text">
+      <div class="brand">RoyalHope</div>
+      <div class="sub">Home Based Care</div>
+    </div>
+  </a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#book">Book Care</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#regions">Coverage</a></li>
+    </ul>
+    <a href="#book" class="nav-cta">📋 Book Now</a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mob">
+  <a href="#about" onclick="cm()">💚 About RoyalHope</a>
+  <a href="#book" onclick="cm()">📋 Book a Care Visit</a>
+  <a href="#services" onclick="cm()">🩺 Our Services</a>
+  <a href="#how" onclick="cm()">📋 How It Works</a>
+  <a href="#why" onclick="cm()">🛡️ Why Choose Us</a>
+  <a href="#regions" onclick="cm()">📍 Where We Serve</a>
+  <a class="wa" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank" onclick="cm()">
+    <svg width="20" height="20" fill="#128C7E"><use href="#wa-ico"/></svg> Ann – 0746 111 400
+  </a>
+  <a class="wa" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank" onclick="cm()">
+    <svg width="20" height="20" fill="#128C7E"><use href="#wa-ico"/></svg> Solomon – 0791 597 351
+  </a>
+  <div class="mob-cta"><a href="#book" onclick="cm()">📋 Book a Care Visit Now</a></div>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section id="home" style="padding:0">
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="badge">🏥 Professional Home Medical Care · Kenya</div>
+        <h1>Care Your Family<br>Deserves, <em>At Home</em></h1>
+        <p class="hero-sub">Does your loved one need medical attention but prefer to stay home? We bring qualified nurses and compassionate caregivers right to your door — for patients of <strong>all ages</strong>, 24 hours a day.</p>
+        <div class="hero-btns">
+          <a href="#book" class="btn-g">📋 Book a Care Visit</a>
+          <a href="#services" class="btn-w">🩺 Our Services</a>
+        </div>
+      </div>
+      <div class="hero-image-stack">
+        <div class="hero-main-img">
+          <!-- Black female nurse caring for elderly black patient at home -->
+          <img src="https://images.unsplash.com/photo-1593377201014-b39c5e5fb7a8?w=700&q=80&auto=format&fit=crop&crop=center" alt="Nurse providing home care" loading="eager" onerror="this.src='https://images.unsplash.com/photo-1527613426441-4da17471b66d?w=700&q=80&auto=format&fit=crop'">
+        </div>
+        <div class="hero-badge-float">
+          <div class="icon">✅</div>
+          <div class="hbf-text">
+            <strong>All Ages Welcome</strong>
+            <span>Children · Adults · Elderly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-num">24/7</div><div class="trust-lbl">Always Available</div></div>
+  <div class="trust-item"><div class="trust-num">100%</div><div class="trust-lbl">Qualified Staff</div></div>
+  <div class="trust-item"><div class="trust-num">9+</div><div class="trust-lbl">Services</div></div>
+  <div class="trust-item"><div class="trust-num">All Ages</div><div class="trust-lbl">Patients Served</div></div>
+</div>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-img-wrap reveal">
+        <!-- Black family being cared for at home -->
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80&auto=format&fit=crop" alt="Compassionate home care" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&q=80&auto=format&fit=crop'">
+      </div>
+      <div class="reveal">
+        <div class="sec-tag">💚 Who We Are</div>
+        <h2 class="sec-h">Bringing Royal Care to Every Home in Kenya</h2>
+        <p class="about-body"><strong>RoyalHope Home Based Care</strong> was founded with a clear mission: to make professional, hospital-quality medical care available to every Kenyan family — delivered right to the comfort and safety of their own home.</p>
+        <p class="about-body">We understand that hospitals can feel overwhelming and impersonal. Healing happens best in familiar surroundings, with family nearby. That's why we send our team of <strong>trained, certified nurses and caregivers</strong> directly to your door — whether you're recovering from surgery, managing a chronic illness, or caring for an elderly parent.</p>
+        <p class="about-body">Our care is <strong>safe, professional, and deeply compassionate</strong>. We serve patients of all ages across Nairobi and beyond, and we coordinate closely with your existing doctors and hospitals.</p>
+        <div class="values-grid">
+          <div class="val-item"><div class="val-icon">❤️</div><div class="val-text">Compassion First</div></div>
+          <div class="val-item"><div class="val-icon">🎓</div><div class="val-text">Certified Nurses</div></div>
+          <div class="val-item"><div class="val-icon">🔒</div><div class="val-text">Safe Practices</div></div>
+          <div class="val-item"><div class="val-icon">💰</div><div class="val-text">Affordable Pricing</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BOOKING (BEFORE SERVICES) ═══ -->
+<section id="book">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:40px" class="reveal">
+      <div class="sec-tag">📞 Get In Touch</div>
+      <h2 class="sec-h">Book a Care Visit</h2>
+      <p class="sec-sub" style="margin:0 auto">The fastest way to reach us is WhatsApp — we usually respond within minutes. Or fill in the form and we'll send your details directly to our team.</p>
+    </div>
+    <div class="book-grid">
+      <!-- Left: contacts + info -->
+      <div class="reveal">
+        <h3 style="font-family:'Lora',serif;font-size:1.25rem;color:var(--navy);margin-bottom:14px">📱 Chat With Us on WhatsApp</h3>
+        <p style="color:var(--muted);font-size:.95rem;line-height:1.7;margin-bottom:20px">Tap either contact below to open WhatsApp instantly. Tell us your location and what care you need — we'll respond and arrange a visit as fast as possible.</p>
+        <div class="wa-contacts">
+          <a class="wa-contact" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20would%20like%20to%20enquire%20about%20home%20based%20care%20services." target="_blank">
+            <div class="wa-icon"><svg><use href="#wa-ico"/></svg></div>
+            <div class="wa-ct"><strong>Ann Njoki</strong><span>0746 111 400 — Tap to open WhatsApp</span></div>
+            <span class="wa-arr">›</span>
+          </a>
+          <a class="wa-contact" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20would%20like%20to%20enquire%20about%20home%20based%20care%20services." target="_blank">
+            <div class="wa-icon"><svg><use href="#wa-ico"/></svg></div>
+            <div class="wa-ct"><strong>Solomon Wanjumbi</strong><span>0791 597 351 — Tap to open WhatsApp</span></div>
+            <span class="wa-arr">›</span>
+          </a>
+        </div>
+        <div class="book-note">
+          <h4>🕐 We Respond Quickly</h4>
+          <p>Once you reach out, one of our coordinators will call or message you to discuss your loved one's needs, confirm availability in your area, and walk you through pricing — all with zero pressure.</p>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="form-card reveal">
+        <h3>Send a Booking Request</h3>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="fn">Full Name *</label>
+            <input type="text" id="fn" placeholder="Your full name" autocomplete="name">
+          </div>
+          <div class="fg">
+            <label for="fp">Phone Number *</label>
+            <input type="tel" id="fp" placeholder="07XX XXX XXX" autocomplete="tel">
+          </div>
+        </div>
+        <div class="fg">
+          <label for="floc">📍 Your Location / Area *</label>
+          <input type="text" id="floc" placeholder="e.g. Westlands Nairobi, Nyali Mombasa, Nakuru Town…">
+        </div>
+        <div class="fg">
+          <label for="fs">Type of Care Needed *</label>
+          <select id="fs">
+            <option value="">Select a service…</option>
+            <option>Home Nursing Care</option>
+            <option>Elderly Care &amp; Daily Support</option>
+            <option>Chronic Illness Management</option>
+            <option>Wound Dressing &amp; Catheter Care</option>
+            <option>Dialysis Home Follow-up &amp; AV Fistula Care</option>
+            <option>Post-Hospital Discharge Care</option>
+            <option>Medication Administration</option>
+            <option>Palliative &amp; Supportive Care</option>
+            <option>Vital Signs Monitoring</option>
+            <option>Not Sure / Other</option>
+          </select>
+        </div>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="fa">Patient Age Group</label>
+            <select id="fa">
+              <option value="">Select…</option>
+              <option>Child (0–12 years)</option>
+              <option>Teenager (13–17 years)</option>
+              <option>Adult (18–59 years)</option>
+              <option>Elderly (60+ years)</option>
+            </select>
+          </div>
+          <div class="fg">
+            <label for="fw">When Do You Need Care?</label>
+            <select id="fw">
+              <option value="">Select…</option>
+              <option>As soon as possible</option>
+              <option>Within 24 hours</option>
+              <option>Within a few days</option>
+              <option>This week</option>
+              <option>Planning ahead</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label for="fno">Additional Details</label>
+          <textarea id="fno" placeholder="Tell us about the patient's condition, nearest landmark, preferred visit times, or anything else helpful…"></textarea>
+        </div>
+        <button class="form-btn" onclick="sendBooking()">
+          <svg width="20" height="20" fill="white"><use href="#wa-ico"/></svg>
+          Send Booking via WhatsApp
+        </button>
+        <p class="form-note">Your request is sent to Ann (0746 111 400) via WhatsApp. We reply within minutes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section id="services">
+  <div class="wrap">
+    <div style="text-align:center" class="reveal">
+      <div class="sec-tag">🏠 What We Offer</div>
+      <h2 class="sec-h">Our Medical Services</h2>
+      <p class="sec-sub" style="margin:0 auto 36px">Every service is tailored to your loved one's specific needs — delivered professionally and compassionately in the comfort of home.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?w=500&q=75&auto=format&fit=crop" alt="Home nursing care" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">🩺</div><h3>Home Nursing Care</h3></div>
+          <p>Registered nurses visit your home for medical assessments, treatment, wound care, injections, and ongoing health monitoring — all in the comfort of home.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Black elderly woman being cared for -->
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&q=75&auto=format&fit=crop" alt="Elderly care" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">👴</div><h3>Elderly Care &amp; Daily Support</h3></div>
+          <p>Compassionate daily assistance — mobility support, personal hygiene, meal preparation, medication reminders, and meaningful companionship for elderly patients.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Medical/clinical image - universal -->
+          <img src="https://images.unsplash.com/photo-1631815588090-d1bcbe9a8539?w=500&q=75&auto=format&fit=crop" alt="Chronic illness management" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">💊</div><h3>Chronic Illness Management</h3></div>
+          <p>Structured ongoing care for patients with diabetes, hypertension, heart disease, kidney disease, and other long-term conditions — keeping symptoms under control.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Clinical wound care - universal -->
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=500&q=75&auto=format&fit=crop" alt="Wound care" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">🩹</div><h3>Wound Dressing &amp; Catheter Care</h3></div>
+          <p>Sterile, professional wound cleaning, dressing changes, and catheter management done safely and hygienically in your home to prevent infection and promote healing.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Medical equipment/dialysis - universal clinical image -->
+          <img src="https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=500&q=75&auto=format&fit=crop" alt="Dialysis care" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">🫀</div><h3>Dialysis Follow-up &amp; AV Fistula Care</h3></div>
+          <p>Dedicated home monitoring and AV fistula care for dialysis patients between sessions — ensuring vascular access health and complication prevention.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Black patient recovering at home -->
+          <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&q=75&auto=format&fit=crop" alt="Post hospital care" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">🏥</div><h3>Post-Hospital Discharge Care</h3></div>
+          <p>Seamless recovery care after discharge — reducing re-admission risk and ensuring safe healing at home with professional nursing support and medication management.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Medication/pharmacy - universal -->
+          <img src="https://images.unsplash.com/photo-1550831107-1553da8c8464?w=500&q=75&auto=format&fit=crop" alt="Medication administration" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">💉</div><h3>Medication Administration</h3></div>
+          <p>Accurate, on-schedule administration of prescribed medications — injections, IV therapy, oral medications — with monitoring for side effects and patient response.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Compassionate care - black family -->
+          <img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=500&q=75&auto=format&fit=crop" alt="Palliative care" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">🕊️</div><h3>Palliative &amp; Supportive Care</h3></div>
+          <p>Dignified, compassionate end-of-life care focused on comfort, effective pain management, and emotional support for both patients and their families.</p>
+        </div>
+      </div>
+
+      <div class="svc-card reveal">
+        <div class="svc-img-wrap">
+          <!-- Blood pressure monitoring - universal clinical -->
+          <img src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=500&q=75&auto=format&fit=crop" alt="Vital signs monitoring" loading="lazy" onerror="this.parentElement.style.background='linear-gradient(135deg,#e8f3ee,#dceaf7)'">
+        </div>
+        <div class="svc-body">
+          <div class="svc-top"><div class="svc-icon">📊</div><h3>Vital Signs Monitoring</h3></div>
+          <p>Regular, accurate measurement of blood pressure, temperature, pulse, oxygen saturation, and blood glucose — with timely reporting to your doctor when needed.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section id="how" style="background:#fff">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:40px" class="reveal">
+      <div class="sec-tag">📋 Simple Process</div>
+      <h2 class="sec-h">How It Works</h2>
+      <p class="sec-sub" style="margin:0 auto">Getting started is simple. We'll have a qualified caregiver at your door as quickly as possible.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item reveal">
+        <div class="step-num">1</div>
+        <h3>Contact Us</h3>
+        <p>Call, WhatsApp us, or fill in the booking form above. Tell us your location, the patient's needs, and when you'd like care to begin.</p>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">2</div>
+        <h3>Free Consultation</h3>
+        <p>A nursing coordinator speaks with you (and your doctor if helpful) to understand the patient fully and build a personalised care plan.</p>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">3</div>
+        <h3>Meet Your Caregiver</h3>
+        <p>We match you with the right nurse for the specific care type needed. We introduce them so everyone is comfortable before care begins.</p>
+      </div>
+      <div class="step-item reveal">
+        <div class="step-num">4</div>
+        <h3>Care Begins at Home</h3>
+        <p>Professional, compassionate care starts on your schedule, in your home. We provide regular updates and are reachable anytime you need us.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY US ═══ -->
+<section id="why">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:36px" class="reveal">
+      <div class="sec-tag">🛡️ Our Promise</div>
+      <h2 class="sec-h">Why Families Choose RoyalHope</h2>
+      <p class="sec-sub" style="margin:0 auto">We combine clinical excellence with genuine human warmth — because every patient deserves royal care.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal"><div class="why-icon">🎓</div><h3>Qualified &amp; Certified Staff</h3><p>All nurses hold valid certifications. Caregivers are trained, background-checked, and continuously supervised for quality assurance.</p></div>
+      <div class="why-card reveal"><div class="why-icon">📋</div><h3>Personalised Care Plans</h3><p>No two patients are the same. Every care plan is custom-built around each patient's unique medical condition, personality, and home environment.</p></div>
+      <div class="why-card reveal"><div class="why-icon">💰</div><h3>Transparent, Affordable Pricing</h3><p>We're upfront about all costs — no surprises, no hidden fees. Quality healthcare should be accessible to every Kenyan family.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🏥</div><h3>Hospital &amp; Doctor Coordination</h3><p>We communicate directly with your doctor and hospital to ensure care is continuous and any concerns are flagged immediately.</p></div>
+      <div class="why-card reveal"><div class="why-icon">🕐</div><h3>Available 24 Hours a Day</h3><p>Health doesn't follow office hours. Our team is reachable day, night, weekends, and public holidays — because emergencies don't wait.</p></div>
+      <div class="why-card reveal"><div class="why-icon">❤️</div><h3>Compassionate, Dignified Care</h3><p>We treat every patient the way we'd want our own family treated — with patience, respect, kindness, and genuine warmth.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials" style="background:var(--bg)">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:36px" class="reveal">
+      <div class="sec-tag">⭐ Families Say</div>
+      <h2 class="sec-h">Real Stories, Real Care</h2>
+      <p class="sec-sub" style="margin:0 auto">Families across Kenya trust RoyalHope to care for their most precious people.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"When my mother was discharged after her hip surgery, we were terrified. The RoyalHope nurse arrived the very next morning and my mother was immediately at ease. Within two weeks she was walking again. The care was absolutely outstanding."</p>
+        <div class="testi-auth">
+          <div class="testi-av">MW</div>
+          <div class="testi-name"><strong>Mary W.</strong><span>Nairobi — Post-Surgery Care</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"My father has diabetes and hypertension. Managing his medication was a nightmare for our family. RoyalHope took over completely — professional, punctual, and truly caring. I can breathe again knowing he's in safe hands."</p>
+        <div class="testi-auth">
+          <div class="testi-av">JK</div>
+          <div class="testi-name"><strong>James K.</strong><span>Mombasa — Chronic Illness Care</span></div>
+        </div>
+      </div>
+      <div class="testi-card reveal">
+        <div class="stars">★★★★★</div>
+        <p class="testi-q">"I was on dialysis and the journey to hospital was becoming too much for me. RoyalHope's nurses came home for my follow-up and AV fistula care. The difference was night and day. Genuinely kind and highly professional people."</p>
+        <div class="testi-auth">
+          <div class="testi-av">PN</div>
+          <div class="testi-name"><strong>Peter N.</strong><span>Nakuru — Dialysis Follow-up</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ REGIONS ═══ -->
+<section id="regions" style="background:#fff">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:32px" class="reveal">
+      <div class="sec-tag">📍 Coverage</div>
+      <h2 class="sec-h">Where We Serve</h2>
+      <p class="sec-sub" style="margin:0 auto">We provide care across Kenya's major regions. Not sure if we cover your area? WhatsApp us and we'll confirm right away.</p>
+    </div>
+    <div class="reg-grid reveal">
+      <div class="reg-card">
+        <div class="reg-img-wrap"><img src="https://images.unsplash.com/photo-1611348524140-53c9a25263d6?w=400&q=75&auto=format&fit=crop" alt="Nairobi" loading="lazy"></div>
+        <div class="reg-info"><h4>Greater Nairobi</h4><p>Our primary hub</p></div>
+      </div>
+      <div class="reg-card">
+        <div class="reg-img-wrap"><img src="https://images.unsplash.com/photo-1590579491624-f98f36d4c763?w=400&q=75&auto=format&fit=crop" alt="Mombasa" loading="lazy"></div>
+        <div class="reg-info"><h4>Mombasa</h4><p>City &amp; coast</p></div>
+      </div>
+      <div class="reg-card">
+        <div class="reg-img-wrap"><img src="https://images.unsplash.com/photo-1575223970966-76ae61ee7838?w=400&q=75&auto=format&fit=crop" alt="Nakuru" loading="lazy"></div>
+        <div class="reg-info"><h4>Nakuru</h4><p>Rift Valley</p></div>
+      </div>
+      <div class="reg-card">
+        <div class="reg-img-wrap"><img src="https://images.unsplash.com/photo-1543418219-44e30b057fea?w=400&q=75&auto=format&fit=crop" alt="Kisumu" loading="lazy"></div>
+        <div class="reg-info"><h4>Kisumu</h4><p>Lakeside region</p></div>
+      </div>
+      <div class="reg-card">
+        <div class="reg-img-wrap"><img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=400&q=75&auto=format&fit=crop" alt="Other areas" loading="lazy"></div>
+        <div class="reg-info"><h4>Other Areas</h4><p>Contact to confirm</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BAND ═══ -->
+<div class="cta-band">
+  <div class="wrap-sm">
+    <h2>Ready to Start? We're Just a Message Away.</h2>
+    <p>Don't wait to get your loved one the care they deserve. Reach out now — we can arrange care within hours.</p>
+    <div class="cta-btns">
+      <a class="cta-wa" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20need%20home%20care%20services." target="_blank">
+        <svg width="20" height="20" fill="white"><use href="#wa-ico"/></svg> WhatsApp Ann Now
+      </a>
+      <a class="cta-wa" style="background:#1a9e4e" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20need%20home%20care%20services." target="_blank">
+        <svg width="20" height="20" fill="white"><use href="#wa-ico"/></svg> WhatsApp Solomon
+      </a>
+      <a class="cta-call" href="tel:+254746111400">📞 0746 111 400</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo-row">
+          <img src="https://i.ibb.co/HLj4dP2s/5dd38ab5-ef55-486b-a843-2b580240d692.png" alt="RoyalHope" onerror="this.style.display='none'">
+          <div class="foot-brand"><div class="nm">RoyalHope</div><div class="tg">Home Based Care</div></div>
+        </div>
+        <p class="foot-desc">Professional, safe and compassionate home-based medical care for patients of all ages across Kenya. We bring hospital-quality care to your home — 24 hours a day.</p>
+        <div class="foot-contacts">
+          <a href="https://wa.me/254746111400" target="_blank">
+            <svg><use href="#wa-ico"/></svg> Ann Njoki — 0746 111 400
+          </a>
+          <a href="https://wa.me/254791597351" target="_blank">
+            <svg><use href="#wa-ico"/></svg> Solomon Wanjumbi — 0791 597 351
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Home Nursing Care</a></li>
+          <li><a href="#services">Elderly Care</a></li>
+          <li><a href="#services">Chronic Illness</a></li>
+          <li><a href="#services">Wound &amp; Catheter Care</a></li>
+          <li><a href="#services">Dialysis Follow-up</a></li>
+          <li><a href="#services">Post-Hospital Care</a></li>
+          <li><a href="#services">Medication Admin</a></li>
+          <li><a href="#services">Palliative Care</a></li>
+          <li><a href="#services">Vital Signs</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#book">Book a Visit</a></li>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#regions">Where We Serve</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Coverage Areas</h4>
+        <ul>
+          <li><a href="#regions">Greater Nairobi</a></li>
+          <li><a href="#regions">Mombasa</a></li>
+          <li><a href="#regions">Nakuru</a></li>
+          <li><a href="#regions">Kisumu</a></li>
+          <li><a href="#regions">Other Areas</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="foot-div">
+    <div class="foot-bottom">
+      <span>© 2025 RoyalHope Home Based Care. All rights reserved.</span>
+      <em>"Professional Care at the Comfort of Home"</em>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FLOATING WA ═══ -->
+<div class="wa-fab">
+  <div class="wa-fab-opts" id="waOpts">
+    <a class="wa-opt" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank">
+      <div class="opt-dot"><svg width="15" height="15" fill="white"><use href="#wa-ico"/></svg></div> Ann — 0746 111 400
+    </a>
+    <a class="wa-opt" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank">
+      <div class="opt-dot"><svg width="15" height="15" fill="white"><use href="#wa-ico"/></svg></div> Solomon — 0791 597 351
+    </a>
+  </div>
+  <button class="wa-fab-main" onclick="toggleWA()" aria-label="WhatsApp">
+    <svg width="30" height="30" fill="white"><use href="#wa-ico"/></svg>
+  </button>
+</div>
+
+<script>
+function toggleMenu(){const m=document.getElementById('mob');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+function cm(){document.getElementById('mob').classList.remove('open');document.body.style.overflow='';}
+function toggleWA(){document.getElementById('waOpts').classList.toggle('open');}
+document.addEventListener('click',function(e){if(!e.target.closest('.wa-fab'))document.getElementById('waOpts').classList.remove('open');});
+
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200);}
+
+function sendBooking(){
+  const name=document.getElementById('fn').value.trim();
+  const phone=document.getElementById('fp').value.trim();
+  const loc=document.getElementById('floc').value.trim();
+  const svc=document.getElementById('fs').value;
+  const age=document.getElementById('fa').value;
+  const when=document.getElementById('fw').value;
+  const notes=document.getElementById('fno').value.trim();
+  if(!name||!phone){alert('Please enter your name and phone number.');return;}
+  if(!loc){alert('Please enter your location / area so we know where to send our team.');return;}
+  const msg=`Hello RoyalHope! 👋 I'd like to book a care visit.\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n📍 *Location:* ${loc}\n🩺 *Service:* ${svc||'Not specified'}\n👶 *Patient Age:* ${age||'Not specified'}\n⏰ *When Needed:* ${when||'Not specified'}\n📝 *Notes:* ${notes||'None'}\n\nPlease get back to me. Thank you!`;
+  window.open('https://wa.me/254746111400?text='+encodeURIComponent(msg),'_blank');
+  toast('✅ Opening WhatsApp — we\'ll reply shortly!');
+}
+
+// Smooth scroll with offset
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',function(e){
+    const t=document.querySelector(this.getAttribute('href'));
+    if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-70,behavior:'smooth'});}
+  });
+});
+
+// Scroll reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
