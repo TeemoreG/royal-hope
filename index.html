@@ -52,11 +52,11 @@ nav.scrolled{box-shadow:0 2px 20px rgba(26,58,92,.10)}
 .hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .25s}
 @media(max-width:840px){.nav-links{display:none}.hamburger{display:flex}}
 
-/* MOBILE MENU */
+/* Update mobile menu top dynamically via JS - base position */
 .mob-menu{
   display:none;flex-direction:column;
   position:fixed;top:72px;left:0;right:0;bottom:0;
-  background:#fff;z-index:490;padding:8px 20px 30px;overflow-y:auto;
+  background:#fff;z-index:491;padding:8px 20px 30px;overflow-y:auto;
 }
 .mob-menu.open{display:flex}
 .mob-menu a{
@@ -278,8 +278,14 @@ section{padding:84px 32px}
   transition:all .25s;display:flex;flex-direction:column;
 }
 .svc-card:hover{border-color:var(--green);box-shadow:0 10px 32px rgba(46,125,79,.12);transform:translateY(-3px)}
-.svc-img-wrap{width:100%;height:180px;overflow:hidden;background:#d0dde8;flex-shrink:0}
-.svc-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s}
+.svc-img-wrap{
+  width:100%;overflow:hidden;background:#d0dde8;flex-shrink:0;
+  aspect-ratio:16/9;
+}
+.svc-img-wrap img{
+  width:100%;height:100%;object-fit:cover;object-position:center top;
+  display:block;transition:transform .45s;
+}
 .svc-card:hover .svc-img-wrap img{transform:scale(1.05)}
 .svc-body{padding:20px 18px;flex:1}
 .svc-card h3{
@@ -294,12 +300,36 @@ section{padding:84px 32px}
 }
 .svc-card:hover .svc-link{gap:8px}
 
-/* PHOTO BREAK */
-.photo-break{display:grid;grid-template-columns:repeat(4,1fr);height:260px}
-@media(max-width:700px){.photo-break{height:180px;grid-template-columns:repeat(2,1fr)}}
+/* PHOTO BREAK — scrollable strip on mobile */
+.photo-break{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  height:280px;overflow:hidden;
+}
 .photo-break div{overflow:hidden}
 .photo-break div img{width:100%;height:100%;object-fit:cover;transition:transform .7s;display:block}
-.photo-break div:hover img{transform:scale(1.06)}
+.photo-break div:hover img{transform:scale(1.04)}
+.swipe-hint{display:none}
+@media(max-width:700px){
+  .photo-break{
+    display:flex;overflow-x:auto;overflow-y:hidden;
+    height:210px;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    padding:0 16px;gap:10px;
+  }
+  .photo-break::-webkit-scrollbar{display:none}
+  .photo-break div{
+    flex:0 0 78vw;scroll-snap-align:start;
+    border-radius:14px;overflow:hidden;
+  }
+  .swipe-hint{
+    display:block;position:absolute;bottom:12px;right:20px;
+    background:rgba(0,0,0,.45);color:#fff;
+    font-size:11px;font-weight:600;letter-spacing:.5px;
+    padding:5px 10px;border-radius:20px;pointer-events:none;
+    transition:opacity .4s;
+  }
+  .swipe-hint.hide{opacity:0}
+}
 
 /* ═══════════════════ HOW IT WORKS ═══════════════════ */
 #how{background:var(--bg)}
@@ -487,26 +517,116 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,.7);padding:60px 32px 
   text-decoration:none;line-height:1;
 }
 .call-btn-green{background:var(--green);color:#fff;box-shadow:0 3px 12px rgba(46,125,79,.25)}
-.call-btn-green:hover{background:var(--teal);transform:translateY(-1px);box-shadow:0 5px 16px rgba(46,125,79,.32)}
+.call-btn-green:hover{background:var(--teal);transform:translateY(-1px)}
 .call-btn-navy{background:var(--navy);color:#fff;box-shadow:0 3px 12px rgba(26,58,92,.2)}
 .call-btn-navy:hover{background:#0f2439;transform:translateY(-1px)}
 .call-btn svg{width:14px;height:14px;flex-shrink:0;fill:currentColor}
 .call-bar-divider{width:1px;height:20px;background:var(--border);flex-shrink:0}
-@media(max-width:620px){
-  .call-bar{padding:7px 12px;gap:7px}
+
+/* Adjust hero top padding to account for nav + call bar on desktop */
+.hero{padding-top:160px}
+
+/* ═══════════════════ MOBILE ═══════════════════ */
+@media(max-width:840px){
+  /* Nav: slightly shorter */
+  nav{height:60px;padding:0 18px}
+  .nav-logo img{height:40px}
+  .nav-logo-text .brand{font-size:16px}
+  .nav-cta{padding:9px 16px;font-size:13px}
+
+  /* Mobile menu: starts below shorter nav */
+  .mob-menu{top:60px}
+
+  /* Call bar: below the 60px nav, tighter but readable */
+  .call-bar{
+    top:60px;padding:7px 16px;gap:8px;
+    justify-content:center;
+  }
   .call-bar-label{display:none}
   .call-bar-divider{display:none}
-  .call-btn{padding:9px 14px;font-size:13px}
+  .call-btn{
+    flex:1;max-width:200px;justify-content:center;
+    padding:10px 12px;font-size:13.5px;border-radius:50px;
+  }
+
+  /* Hero: account for 60px nav + ~44px call bar */
+  .hero{
+    padding-top:130px;
+    padding-bottom:50px;
+    padding-left:20px;
+    padding-right:20px;
+    min-height:auto;
+  }
+  .hero-inner{gap:32px}
+  .hero-eyebrow{font-size:10.5px;margin-bottom:12px}
+  .hero h1{font-size:2.2rem;margin-bottom:14px;line-height:1.15}
+  .hero-sub{font-size:.96rem;line-height:1.72;margin-bottom:24px}
+  .btn-g,.btn-w{
+    width:100%;justify-content:center;
+    padding:15px 20px;font-size:15px;border-radius:12px;
+  }
+  .hero-btns{flex-direction:column;gap:10px;align-items:stretch}
+
+  /* About */
+  .about-grid{gap:32px}
+  .about-img-main{aspect-ratio:16/9}
+  .about-body{font-size:.95rem}
+  .values-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .val-item{padding:11px 12px}
+
+  /* Services — horizontal card layout on mobile */
+  .svc-grid{grid-template-columns:1fr;gap:14px}
+  .svc-card{flex-direction:row;align-items:stretch;min-height:110px}
+  .svc-img-wrap{
+    width:120px;min-width:120px;flex-shrink:0;
+    aspect-ratio:unset;height:auto;border-radius:0;
+  }
+  .svc-body{padding:14px 14px 12px}
+  .svc-card h3{font-size:.95rem;margin-bottom:5px}
+  .svc-card p{font-size:.81rem;line-height:1.55;
+    display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .svc-link{font-size:.8rem;margin-top:6px}
+
+  /* Steps */
+  .steps-row{grid-template-columns:1fr 1fr;gap:0}
+  .step-item{padding:22px 16px}
+
+  /* Why */
+  .why-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .why-card{padding:20px 16px}
+
+  /* Testimonials */
+  .testi-grid{grid-template-columns:1fr}
+
+  /* Regions */
+  .reg-grid{grid-template-columns:repeat(3,1fr);gap:10px}
+  .reg-img-wrap{height:80px}
+
+  /* CTA band */
+  .cta-band{padding:50px 20px}
+  .cta-btns{flex-direction:column;align-items:stretch;gap:10px}
+  .cta-wa,.cta-call{justify-content:center;padding:15px 20px}
+
+  /* Footer */
+  footer{padding:44px 20px 28px}
+  .foot-top{gap:28px}
+
+  /* Sections */
+  section{padding:56px 20px}
+  nav{padding:0 18px}
 }
 
-/* Adjust hero top padding to account for call bar */
-.hero{padding-top:152px}
-@media(max-width:600px){.hero{padding-top:140px}}
-
-/* MOBILE TWEAKS */
-@media(max-width:600px){
-  section{padding:60px 20px}
-  nav{padding:0 20px}
+@media(max-width:480px){
+  /* Small phones */
+  .why-grid{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr}
+  .reg-grid{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:2rem}
+  .hero-imgs-grid{grid-template-columns:1fr}
+  .hero-img-bot,.hero-trust-pill{display:none}
+  .hero-img-top{aspect-ratio:3/2}
+  /* Keep service cards horizontal but slightly narrower image */
+  .svc-img-wrap{width:100px;min-width:100px}
 }
 </style>
 </head>
@@ -891,11 +1011,14 @@ footer{background:var(--navy-dark);color:rgba(255,255,255,.7);padding:60px 32px 
 </section>
 
 <!-- PHOTO BREAK -->
-<div class="photo-break">
-  <div><img src="https://i.ibb.co/ZphpLTyG/5-steps-to-getting-help-from-a-home-care-agency-mj-Evv-QJWQJf-LE1-JL.jpg" alt="Home care" loading="lazy"></div>
-  <div><img src="https://i.ibb.co/tpPhM1L0/caregiver-assisting-senior-african-american-600nw-2679453823.webp" alt="Elderly care" loading="lazy"></div>
-  <div><img src="https://i.ibb.co/4wz47yBQ/Chronic-Disease-Management-scaled.jpg" alt="Chronic care" loading="lazy"></div>
-  <div><img src="https://i.ibb.co/BHYM6W7w/homecaree3.jpg" alt="Nursing care" loading="lazy"></div>
+<div style="position:relative">
+  <div class="photo-break" id="photoBreak">
+    <div><img src="https://i.ibb.co/ZphpLTyG/5-steps-to-getting-help-from-a-home-care-agency-mj-Evv-QJWQJf-LE1-JL.jpg" alt="Home care team" loading="lazy"></div>
+    <div><img src="https://i.ibb.co/tpPhM1L0/caregiver-assisting-senior-african-american-600nw-2679453823.webp" alt="Elderly care support" loading="lazy"></div>
+    <div><img src="https://i.ibb.co/8DFwJtNC/origin.avif" alt="Post-hospital care" loading="lazy"></div>
+    <div><img src="https://i.ibb.co/BHYM6W7w/homecaree3.jpg" alt="Nursing care" loading="lazy"></div>
+  </div>
+  <div class="swipe-hint" id="swipeHint">swipe →</div>
 </div>
 
 <!-- ═══════════════════ HOW IT WORKS ═══════════════════ -->
@@ -1203,6 +1326,9 @@ window.addEventListener('scroll',function(){
 // Menu
 function toggleMenu(){
   const m=document.getElementById('mob');
+  const navH=document.getElementById('navbar').offsetHeight;
+  const barH=document.querySelector('.call-bar').offsetHeight;
+  m.style.top=(navH+barH)+'px';
   m.classList.toggle('open');
   document.body.style.overflow=m.classList.contains('open')?'hidden':'';
   document.querySelector('.call-bar').style.display=m.classList.contains('open')?'none':'';
@@ -1248,6 +1374,15 @@ function sendBooking(){
   const msg=`Hello RoyalHope! I'd like to book a care visit.\n\n*Name:* ${name}\n*Phone:* ${phone}\n*Location:* ${loc}\n*Service:* ${svc||'Not specified'}\n*Patient Age:* ${age||'Not specified'}\n*When Needed:* ${when||'Not specified'}\n*Notes:* ${notes||'None'}\n\nPlease get back to me. Thank you!`;
   window.open('https://wa.me/254746111400?text='+encodeURIComponent(msg),'_blank');
   toast('Opening WhatsApp — we\'ll reply shortly!');
+}
+
+// Hide swipe hint after user scrolls the photo strip
+const photoBreak=document.getElementById('photoBreak');
+const swipeHint=document.getElementById('swipeHint');
+if(photoBreak&&swipeHint){
+  photoBreak.addEventListener('scroll',function(){
+    swipeHint.classList.add('hide');
+  },{once:true});
 }
 
 // Smooth scroll with nav offset
