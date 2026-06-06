@@ -1,798 +1,1563 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RoyalHope Home Based Care – Professional Care at Home</title>
-<meta name="description" content="RoyalHope Home Based Care — qualified nurses serving Nairobi and Kiambu County. Elderly care, wound dressing, chronic illness management, 24/7.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --navy:#1a3a5c;--navy-dk:#0f2439;
-  --green:#2e7d4f;--green-lt:#4caf80;--green-pale:#edf7f2;
-  --teal:#1e6e5e;--gold:#b8952a;
-  --bg:#f5f8f6;--white:#fff;
-  --text:#253040;--muted:#62778a;--border:#dde8e1;
-  --sh:0 6px 32px rgba(26,58,92,.10);--sh-sm:0 2px 14px rgba(26,58,92,.07);
-  --r:18px;--r-sm:10px;
-}
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.65}
-/* THE KEY FIX: never collapse images — use explicit heights on wrappers instead */
-img{display:block;max-width:100%}
-a{color:inherit;text-decoration:none}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Royal Hope Home Based Care – Professional Care at Home</title>
+  <meta name="description" content="Royal Hope Home Based Care — professional nursing and ultrasound services at home in Nairobi & Kiambu. Obstetrics & abdominal pelvic scans.">
+  
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 
-/* ── PAGE/TAB ENGINE ── */
-.page{display:none}.page.active{display:block}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:600;
-  height:68px;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);
-  border-bottom:1px solid rgba(221,232,225,.8);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 36px;transition:box-shadow .3s;
-}
-nav.scrolled{box-shadow:0 2px 18px rgba(26,58,92,.10)}
-.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;flex-shrink:0}
-.nav-logo img{height:44px;width:auto;object-fit:contain}
-.logo-txt .brand{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:700;color:var(--navy);line-height:1.1}
-.logo-txt .sub{font-size:10px;color:var(--green);font-weight:600;letter-spacing:.6px;text-transform:uppercase}
-.nav-tabs{display:flex;gap:3px;list-style:none}
-.nav-tab{
-  display:flex;align-items:center;gap:5px;
-  padding:8px 13px;border-radius:8px;cursor:pointer;
-  font-size:13.5px;font-weight:500;color:var(--navy);transition:all .18s;
-}
-.nav-tab:hover{background:var(--green-pale);color:var(--green)}
-.nav-tab.active{background:var(--green);color:#fff}
-.nav-tab svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;flex-shrink:0}
-.nav-calls{display:flex;gap:8px;align-items:center}
-.cpill{
-  display:inline-flex;align-items:center;gap:6px;
-  padding:8px 14px;border-radius:50px;font-size:12.5px;font-weight:700;white-space:nowrap;
-  transition:all .18s;
-}
-.cpill-g{background:var(--green);color:#fff;box-shadow:0 2px 10px rgba(46,125,79,.25)}
-.cpill-g:hover{background:var(--teal)}
-.cpill-n{background:var(--navy);color:#fff;box-shadow:0 2px 10px rgba(26,58,92,.2)}
-.cpill-n:hover{background:var(--navy-dk)}
-.cpill svg{width:12px;height:12px;fill:currentColor;flex-shrink:0}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.25s}
-@media(max-width:960px){nav{padding:0 18px;height:60px}.nav-tabs,.nav-calls{display:none}.hamburger{display:flex}}
-
-/* ── MOBILE MENU ── */
-.mob-menu{display:none;position:fixed;top:60px;left:0;right:0;bottom:0;background:#fff;z-index:595;overflow-y:auto;padding:4px 0 30px}
-.mob-menu.open{display:block}
-.mob-row{display:flex;align-items:center;gap:12px;padding:16px 22px;border-bottom:1px solid #eef3ef;font-size:15px;font-weight:500;color:var(--navy);cursor:pointer;transition:background .15s}
-.mob-row:hover{background:#f8fbf9}
-.mob-row svg{width:16px;height:16px;fill:none;stroke:var(--green);stroke-width:2;stroke-linecap:round;flex-shrink:0}
-.mob-calls{padding:16px 22px;display:flex;flex-direction:column;gap:10px}
-.mob-cbtn{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px;border-radius:12px;font-size:14.5px;font-weight:700;color:#fff;transition:all .18s}
-.mob-cbtn svg{width:16px;height:16px;fill:currentColor}
-
-/* ── PAGE OFFSET ── */
-.page-body{padding-top:68px}
-@media(max-width:960px){.page-body{padding-top:60px}}
-
-/* ── UTILS ── */
-.wrap{max-width:1120px;margin:0 auto;padding:0 36px}
-@media(max-width:600px){.wrap{padding:0 18px}}
-.sec{padding:68px 0}
-@media(max-width:600px){.sec{padding:48px 0}}
-.eyebrow{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--green);margin-bottom:11px;border-bottom:2px solid var(--green);padding-bottom:2px}
-.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.7rem);color:var(--navy);line-height:1.15;font-weight:700;margin-bottom:13px}
-.sec-sub{color:var(--muted);font-size:.97rem;line-height:1.78;max-width:560px}
-.tc{text-align:center}.tc .sec-sub{margin:0 auto}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 26px;border-radius:12px;font-size:14.5px;font-weight:700;cursor:pointer;border:none;transition:all .2s;text-decoration:none;font-family:'DM Sans',sans-serif}
-.btn-g{background:var(--green);color:#fff;box-shadow:0 4px 18px rgba(46,125,79,.28)}.btn-g:hover{background:var(--teal);transform:translateY(-1px)}
-.btn-o{background:#fff;color:var(--navy);border:2px solid #bfd4e3}.btn-o:hover{border-color:var(--navy);background:#f0f6fb}
-.btn svg{width:16px;height:16px;fill:currentColor;flex-shrink:0}
-.rv{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.rv.vis{opacity:1;transform:translateY(0)}
-.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
-.bg-w{background:#fff}.bg-g{background:var(--bg)}
-
-/* ══ PAGE 1: HOME ══ */
-.hero{background:linear-gradient(148deg,#dff0e8 0%,#cde4f0 55%,#dff0e8 100%);padding:52px 0 50px;overflow:hidden;position:relative}
-.hero::before{content:'';position:absolute;top:-140px;right:-140px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(46,125,79,.07),transparent 68%);pointer-events:none}
-.hero-inner{max-width:1120px;margin:0 auto;padding:0 36px;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-@media(max-width:860px){.hero-inner{grid-template-columns:1fr;gap:34px;padding:0 20px;text-align:center}}
-.hero-ey{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--green);margin-bottom:15px;padding-left:10px;border-left:3px solid var(--green)}
-@media(max-width:860px){.hero-ey{border-left:none;padding-left:0;border-bottom:2px solid var(--green);padding-bottom:2px}}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,5vw,3.7rem);line-height:1.1;font-weight:700;color:var(--navy);margin-bottom:17px}
-.hero h1 em{color:var(--green);font-style:italic}
-.hero-sub{font-size:.98rem;color:var(--muted);line-height:1.8;margin-bottom:26px;max-width:440px}
-@media(max-width:860px){.hero-sub{margin:0 auto 24px;max-width:500px}}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
-@media(max-width:860px){.hero-btns{justify-content:center}}
-@media(max-width:480px){.hero-btns{flex-direction:column;align-items:stretch}.hero-btns .btn{justify-content:center}}
-
-/* Hero image grid — ALL with explicit heights */
-.him{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-@media(max-width:860px){.him{max-width:460px;margin:0 auto}}
-.him-top{grid-column:1/-1;border-radius:16px;overflow:hidden;box-shadow:0 8px 38px rgba(26,58,92,.15);height:210px}
-.him-top img,.him-bot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
-.him-bot{border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(26,58,92,.12);height:136px}
-.him-bot img{height:100%}
-.him-stat{border-radius:12px;background:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;height:136px;padding:12px}
-.him-stat .sn{font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);font-weight:700;line-height:1}
-.him-stat .sl{color:rgba(255,255,255,.7);font-size:9.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;text-align:center}
-.him-stat .sd{width:26px;height:1px;background:rgba(255,255,255,.2);margin:7px 0}
-@media(max-width:480px){.him-bot,.him-stat{display:none}.him-top{height:190px}}
-
-/* Trust bar */
-.trust{background:var(--navy);display:grid;grid-template-columns:repeat(4,1fr)}
-@media(max-width:580px){.trust{grid-template-columns:repeat(2,1fr)}}
-.trust-i{padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.06)}
-.t-n{font-family:'Cormorant Garamond',serif;font-size:1.95rem;color:var(--gold);font-weight:700;line-height:1}
-.t-l{color:rgba(255,255,255,.56);font-size:10px;margin-top:5px;font-weight:500;letter-spacing:.5px;text-transform:uppercase}
-
-/* Service preview cards on home */
-.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:860px){.svc-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.svc-grid{grid-template-columns:1fr}}
-.svc-card{background:#fff;border-radius:var(--r);overflow:hidden;border:1.5px solid var(--border);transition:all .24s;display:flex;flex-direction:column}
-.svc-card:hover{border-color:var(--green);box-shadow:0 8px 28px rgba(46,125,79,.13);transform:translateY(-3px)}
-/* CRITICAL: explicit height on service image container */
-.svc-img{height:188px;overflow:hidden;background:#dae4dd;flex-shrink:0}
-.svc-img img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s}
-.svc-card:hover .svc-img img{transform:scale(1.05)}
-.svc-body{padding:17px 15px;flex:1;display:flex;flex-direction:column}
-.svc-body h3{font-family:'Cormorant Garamond',serif;font-size:1.03rem;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3}
-.svc-body p{color:var(--muted);font-size:.82rem;line-height:1.63;flex:1}
-.svc-link{display:inline-flex;align-items:center;gap:4px;margin-top:10px;color:var(--green);font-size:.79rem;font-weight:700;cursor:pointer;transition:gap .2s}
-.svc-card:hover .svc-link{gap:7px}
-
-/* Steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr)}
-@media(max-width:720px){.steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:400px){.steps{grid-template-columns:1fr}}
-.step{padding:28px 18px;text-align:center}
-.step-n{width:48px;height:48px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;margin:0 auto 14px}
-.step h3{font-size:.93rem;font-weight:700;color:var(--navy);margin-bottom:6px}
-.step p{color:var(--muted);font-size:.82rem;line-height:1.63}
-
-/* Testimonials */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-@media(max-width:860px){.testi-grid{grid-template-columns:1fr}}
-.testi-card{background:#fff;border-radius:var(--r);padding:22px;border-top:3px solid var(--green);box-shadow:var(--sh-sm)}
-.stars{color:var(--gold);font-size:12px;margin-bottom:9px;letter-spacing:2px}
-.testi-q{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--navy);font-size:.95rem;line-height:1.7;margin-bottom:16px}
-.testi-auth{display:flex;align-items:center;gap:10px}
-.testi-av{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--green));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:700;flex-shrink:0}
-.testi-name strong{display:block;font-size:.84rem;font-weight:700;color:var(--navy)}
-.testi-name span{font-size:.72rem;color:var(--muted)}
-
-/* CTA band */
-.cta-band{background:linear-gradient(135deg,var(--navy),var(--teal));padding:58px 36px;text-align:center;position:relative;overflow:hidden}
-.cta-band::before,.cta-band::after{content:'';position:absolute;border-radius:50%;background:rgba(255,255,255,.04);pointer-events:none}
-.cta-band::before{width:340px;height:340px;top:-110px;left:-80px}
-.cta-band::after{width:290px;height:290px;bottom:-80px;right:-60px}
-.cta-band h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3.5vw,2.4rem);color:#fff;font-weight:700;margin-bottom:11px;position:relative;z-index:1}
-.cta-band p{color:rgba(255,255,255,.78);font-size:.96rem;line-height:1.72;max-width:450px;margin:0 auto 24px;position:relative;z-index:1}
-.cta-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.cta-wa{display:inline-flex;align-items:center;gap:8px;background:#25d366;color:#fff;padding:14px 22px;border-radius:12px;font-size:14px;font-weight:700;box-shadow:0 4px 16px rgba(37,211,102,.3);transition:all .2s}
-.cta-wa:hover{background:#1da851;transform:translateY(-2px)}
-.cta-wa svg{width:17px;height:17px;fill:#fff}
-.cta-call{display:inline-flex;align-items:center;gap:7px;color:rgba(255,255,255,.82);font-size:14px;font-weight:600;padding:12px 20px;border:2px solid rgba(255,255,255,.28);border-radius:12px;transition:all .2s;cursor:pointer}
-.cta-call:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.55)}
-.cta-call svg{width:14px;height:14px;fill:currentColor}
-@media(max-width:480px){.cta-btns{flex-direction:column;align-items:stretch}.cta-wa,.cta-call{justify-content:center}}
-
-/* ══ PAGE 2: BOOK ══ */
-.book-hero{background:linear-gradient(148deg,#dff0e8,#cde4f0);padding:44px 0 38px;border-bottom:1px solid var(--border)}
-.book-hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.7rem);color:var(--navy);font-weight:700;margin-bottom:8px}
-.book-hero p{color:var(--muted);font-size:.97rem;line-height:1.7}
-.book-grid{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start}
-@media(max-width:860px){.book-grid{grid-template-columns:1fr}}
-.wa-contacts{display:flex;flex-direction:column;gap:11px;margin-bottom:20px}
-.wa-c{display:flex;align-items:center;gap:13px;background:#f0fdf6;border:1.5px solid #c3f0d6;border-radius:13px;padding:15px 17px;transition:all .2s}
-.wa-c:hover{border-color:var(--green);background:#e5fbee;transform:translateY(-1px);box-shadow:0 4px 14px rgba(46,125,79,.1)}
-.wa-ic{width:44px;height:44px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 2px 10px rgba(37,211,102,.3)}
-.wa-ic svg{width:21px;height:21px;fill:#fff}
-.wa-ct strong{display:block;color:var(--navy);font-size:.88rem;font-weight:700}
-.wa-ct span{color:var(--muted);font-size:.74rem}
-.wa-arr{margin-left:auto;color:var(--green);font-size:21px;flex-shrink:0}
-.note-box{background:linear-gradient(135deg,var(--navy),var(--teal));border-radius:13px;padding:21px;color:#fff}
-.note-box h4{font-family:'Cormorant Garamond',serif;font-size:1.08rem;font-weight:700;margin-bottom:7px}
-.note-box p{font-size:.85rem;line-height:1.7;color:rgba(255,255,255,.8)}
-.form-card{background:#fff;border-radius:var(--r);padding:28px 26px;box-shadow:var(--sh)}
-@media(max-width:540px){.form-card{padding:20px 15px}}
-.form-card h3{font-family:'Cormorant Garamond',serif;font-size:1.38rem;font-weight:700;color:var(--navy);margin-bottom:20px}
-.fg{margin-bottom:13px}
-.fg label{display:block;font-weight:600;font-size:12px;color:var(--navy);margin-bottom:5px;letter-spacing:.15px}
-.fg input,.fg select,.fg textarea{width:100%;padding:12px 14px;border:1.5px solid #d0dde8;border-radius:var(--r-sm);font-family:'DM Sans',sans-serif;font-size:15px;color:var(--text);background:#fff;outline:none;transition:border-color .18s,box-shadow .18s;-webkit-appearance:none}
-.fg select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%2362778a' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--green);box-shadow:0 0 0 3px rgba(46,125,79,.09)}
-.fg textarea{resize:vertical;min-height:76px;line-height:1.6}
-.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-@media(max-width:480px){.fg-row{grid-template-columns:1fr}}
-.form-btn{width:100%;background:var(--green);color:#fff;padding:15px;border-radius:12px;border:none;font-size:15px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(46,125,79,.28);transition:all .2s;margin-top:5px;font-family:'DM Sans',sans-serif}
-.form-btn:hover{background:var(--teal);transform:translateY(-1px)}
-.form-btn svg{width:17px;height:17px;fill:#fff}
-.form-note{text-align:center;color:var(--muted);font-size:11.5px;margin-top:8px}
-
-/* ══ PAGE 3: SERVICES ══ */
-/* Photo strip — explicit heights everywhere */
-.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);overflow:hidden}
-.photo-strip-div{height:250px;overflow:hidden}
-.photo-strip-div img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
-.photo-strip-div:hover img{transform:scale(1.05)}
-@media(max-width:680px){
-  .photo-strip{display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:8px;padding:0 16px}
-  .photo-strip::-webkit-scrollbar{display:none}
-  .photo-strip-div{flex:0 0 75vw;scroll-snap-align:start;border-radius:12px;height:200px}
-}
-
-/* ══ PAGE 4: ABOUT ══ */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-@media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:34px}}
-/* Explicit height on about image */
-.about-img-wrap{border-radius:18px;overflow:hidden;height:360px;box-shadow:var(--sh)}
-.about-img-wrap img{width:100%;height:100%;object-fit:cover;display:block}
-@media(max-width:820px){.about-img-wrap{height:240px}}
-.about-body{color:var(--text);font-size:.95rem;line-height:1.8;margin-bottom:15px}
-.about-body strong{color:var(--navy);font-weight:700}
-.vals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
-.val-i{display:flex;align-items:center;gap:8px;background:var(--green-pale);border-radius:8px;padding:10px 12px}
-.val-dot{width:21px;height:21px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.val-dot svg{width:11px;height:11px;fill:none;stroke:#fff;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
-.val-l{font-size:.82rem;font-weight:600;color:var(--navy)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-@media(max-width:860px){.why-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:480px){.why-grid{grid-template-columns:1fr}}
-.why-card{background:#fff;border-radius:var(--r);padding:22px 18px;border:1.5px solid var(--border);transition:all .22s}
-.why-card:hover{border-color:var(--green);box-shadow:var(--sh-sm);transform:translateY(-2px)}
-.why-dash{width:30px;height:3px;background:var(--green);border-radius:2px;margin-bottom:12px}
-.why-card h3{font-size:.92rem;font-weight:700;color:var(--navy);margin-bottom:6px}
-.why-card p{color:var(--muted);font-size:.81rem;line-height:1.63}
-.faq-wrap{max-width:720px;margin:0 auto}
-.faq-item{border-bottom:1px solid var(--border)}
-.faq-q{width:100%;background:none;border:none;padding:19px 0;display:flex;align-items:center;justify-content:space-between;gap:13px;text-align:left;cursor:pointer;font-size:.95rem;font-weight:600;color:var(--navy);transition:color .18s;font-family:'DM Sans',sans-serif}
-.faq-q:hover{color:var(--green)}
-.faq-q svg{flex-shrink:0;width:16px;height:16px;fill:none;stroke:var(--green);stroke-width:2.2;stroke-linecap:round;transition:transform .3s}
-.faq-item.open .faq-q svg{transform:rotate(45deg)}
-.faq-ans{max-height:0;overflow:hidden;transition:max-height .36s ease,padding-bottom .26s}
-.faq-item.open .faq-ans{max-height:240px;padding-bottom:14px}
-.faq-ans p{color:var(--muted);font-size:.9rem;line-height:1.74}
-
-/* ══ PAGE 5: COVERAGE ══ */
-.reg-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}
-@media(max-width:860px){.reg-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:480px){.reg-grid{grid-template-columns:repeat(2,1fr)}}
-.reg-card{border-radius:13px;overflow:hidden;border:1.5px solid var(--border);background:#fff;transition:all .22s;box-shadow:var(--sh-sm)}
-.reg-card:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--green-lt)}
-/* Explicit height on region image wrappers */
-.reg-img{height:108px;overflow:hidden;background:#dae4dd}
-.reg-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
-.reg-card:hover .reg-img img{transform:scale(1.06)}
-.reg-info{padding:10px 11px}
-.reg-info h4{color:var(--navy);font-size:.8rem;font-weight:700;margin-bottom:1px}
-.reg-info p{color:var(--muted);font-size:.71rem}
-.area-detail{background:#fff;border-radius:14px;padding:24px;border:1.5px solid var(--border)}
-.area-detail h4{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:10px}
-.area-detail p{color:var(--muted);font-size:.86rem;line-height:1.84}
-
-/* ══ FOOTER ══ */
-footer{background:var(--navy-dk);color:rgba(255,255,255,.65);padding:50px 36px 28px}
-.foot-inner{max-width:1120px;margin:0 auto}
-.foot-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:38px;margin-bottom:34px}
-@media(max-width:860px){.foot-top{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.foot-top{grid-template-columns:1fr}}
-.foot-logo-row{display:flex;align-items:center;gap:10px;margin-bottom:13px}
-.foot-logo-row img{height:42px;width:auto;object-fit:contain;display:block}
-.foot-brand .nm{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;font-weight:700}
-.foot-brand .tg{font-size:9.5px;color:var(--gold);font-weight:600;letter-spacing:.5px;text-transform:uppercase}
-.foot-desc{font-size:12.5px;line-height:1.8;max-width:260px;color:rgba(255,255,255,.52);margin-bottom:16px}
-.foot-contacts a{display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.62);font-size:12.5px;margin-bottom:7px;transition:color .18s}
-.foot-contacts a:hover{color:var(--gold)}
-.foot-contacts svg{width:13px;height:13px;fill:var(--gold);flex-shrink:0}
-.foot-col h4{color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:13px}
-.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
-.foot-col ul li a{color:rgba(255,255,255,.5);font-size:12.5px;transition:color .18s;cursor:pointer}
-.foot-col ul li a:hover{color:var(--gold)}
-.foot-div{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:16px}
-.foot-bottom{display:flex;flex-wrap:wrap;gap:7px;justify-content:space-between;font-size:11.5px;color:rgba(255,255,255,.26)}
-.foot-bottom em{color:var(--gold);font-style:italic}
-
-/* ══ FLOATING WA (single popup) ══ */
-.wa-fab{position:fixed;bottom:22px;right:20px;z-index:700;display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.wa-fab-menu{display:none;flex-direction:column;gap:7px;align-items:flex-end}
-.wa-fab-menu.open{display:flex;animation:fup .22s ease}
-@keyframes fup{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.wa-opt{display:flex;align-items:center;gap:9px;background:#fff;border-radius:50px;padding:9px 15px;box-shadow:0 3px 16px rgba(0,0,0,.12);white-space:nowrap;font-size:13px;font-weight:700;color:var(--navy);transition:all .18s}
-.wa-opt:hover{background:#f0fdf4;transform:translateX(-2px)}
-.wa-dot{width:25px;height:25px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.wa-fab-btn{width:54px;height:54px;border-radius:50%;background:#25d366;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.46);animation:pulse 2.8s ease-in-out infinite}
-@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.46)}50%{box-shadow:0 4px 36px rgba(37,211,102,.68)}}
-#btt{position:fixed;bottom:86px;left:18px;z-index:500;width:40px;height:40px;border-radius:50%;background:#fff;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh-sm);opacity:0;pointer-events:none;transition:all .28s}
-#btt.vis{opacity:1;pointer-events:auto}
-#btt:hover{background:var(--green-pale);border-color:var(--green)}
-#btt svg{width:15px;height:15px;fill:none;stroke:var(--navy);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
-#toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%) translateY(12px);background:var(--green);color:#fff;padding:11px 22px;border-radius:50px;font-weight:700;font-size:12.5px;z-index:800;opacity:0;pointer-events:none;transition:all .28s;white-space:nowrap;box-shadow:0 4px 18px rgba(46,125,79,.4)}
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-/* FIX: Ensure all service cards are visible on mobile */
-@media(max-width:860px){
-  .svc-grid{
-    display:grid !important;
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-}
-@media(max-width:520px){
-  .svc-grid{
-    grid-template-columns:1fr !important;
-  }
-  .svc-card{
-    display:flex !important;
-  }
-}
-
-/* Additional fix for any hidden service images */
-.svc-img{
-  height:188px;
-  overflow:hidden;
-  background:#dae4dd;
-  flex-shrink:0;
-  display:block !important;
-}
-.svc-img img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
-  display:block !important;
-}
-
-/* Shared call buttons in booking page */
-.call-btn-row{display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
-.call-link{display:flex;align-items:center;gap:9px;padding:13px 17px;border-radius:11px;font-size:14px;font-weight:700;color:#fff;transition:all .18s}
-.call-link svg{width:15px;height:15px;fill:currentColor}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #1a1a2e;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    
+    /* ===== NOTICE BANNER ===== */
+    .notice-banner {
+      background: linear-gradient(135deg, #e83e8c 0%, #1f7a4a 100%);
+      color: white;
+      padding: 14px 20px;
+      position: relative;
+      z-index: 100;
+    }
+    
+    .notice-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    
+    .notice-badge {
+      background: rgba(255,255,255,0.2);
+      backdrop-filter: blur(4px);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    
+    .notice-text {
+      font-size: 14px;
+      font-weight: 500;
+    }
+    
+    .notice-text strong {
+      font-weight: 800;
+    }
+    
+    .notice-close {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+      opacity: 0.7;
+      transition: opacity 0.2s;
+    }
+    
+    .notice-close:hover {
+      opacity: 1;
+    }
+    
+    /* ===== SCROLLING TICKER BAR ===== */
+    .ticker-bar {
+      background: #1a2a1a;
+      overflow: hidden;
+      padding: 10px 0;
+      position: relative;
+      z-index: 99;
+    }
+    
+    .ticker-track {
+      display: flex;
+      width: fit-content;
+      animation: tickerScroll 25s linear infinite;
+    }
+    
+    .ticker-track:hover {
+      animation-play-state: paused;
+    }
+    
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 24px;
+      white-space: nowrap;
+    }
+    
+    .ticker-dot {
+      width: 6px;
+      height: 6px;
+      background: #e83e8c;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    
+    .ticker-dot-green {
+      background: #1f7a4a;
+    }
+    
+    .ticker-text {
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.3px;
+    }
+    
+    .ticker-text strong {
+      color: #e83e8c;
+      font-weight: 800;
+    }
+    
+    @keyframes tickerScroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+    
+    /* ===== NAVIGATION ===== */
+    nav {
+      background: white;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+    
+    .logo img {
+      height: 48px;
+      width: auto;
+      border-radius: 12px;
+    }
+    
+    .logo-text .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1a2a1a;
+    }
+    
+    .logo-text .brand .pink {
+      color: #e83e8c;
+    }
+    
+    .logo-text .brand .green {
+      color: #1f7a4a;
+    }
+    
+    .logo-text .tagline {
+      font-size: 0.65rem;
+      color: #6c757d;
+      letter-spacing: 0.5px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    
+    .nav-link {
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #2c3e50;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    
+    .nav-link:hover {
+      background: #fce4ec;
+      color: #e83e8c;
+    }
+    
+    .nav-link.active {
+      background: #1f7a4a;
+      color: white;
+    }
+    
+    .nav-phone {
+      background: #e83e8c;
+      color: white;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 12px;
+      transition: all 0.2s;
+    }
+    
+    .nav-phone:hover {
+      background: #1f7a4a;
+      transform: translateY(-2px);
+    }
+    
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    
+    .menu-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: #1a2a1a;
+      margin: 5px 0;
+      border-radius: 2px;
+    }
+    
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 74px;
+      left: 0;
+      right: 0;
+      background: white;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 20px;
+      z-index: 98;
+    }
+    
+    .mobile-menu.open {
+      display: block;
+    }
+    
+    .mobile-menu .nav-link {
+      display: block;
+      padding: 14px 20px;
+      text-align: center;
+    }
+    
+    .mobile-menu .nav-phone {
+      display: flex;
+      justify-content: center;
+      margin: 12px 0 8px;
+    }
+    
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+    }
+    
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #fff5f8 0%, #e8f5e9 100%);
+      padding: 64px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(232,62,140,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 8s ease-in-out infinite;
+    }
+    
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -20%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(31,122,74,0.06) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: float 10s ease-in-out infinite reverse;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) translateX(0);
+      }
+      50% {
+        transform: translateY(-20px) translateX(10px);
+      }
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .hero-badge {
+      display: inline-block;
+      background: rgba(232,62,140,0.12);
+      color: #e83e8c;
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.2;
+      color: #1a2a1a;
+      margin-bottom: 20px;
+    }
+    
+    .hero h1 .pink {
+      color: #e83e8c;
+    }
+    
+    .hero h1 .green {
+      color: #1f7a4a;
+    }
+    
+    .hero p {
+      color: #5a6e5a;
+      font-size: 1rem;
+      margin-bottom: 28px;
+      max-width: 480px;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    
+    .btn-primary-pink {
+      background: #e83e8c;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(232,62,140,0.3);
+    }
+    
+    .btn-primary-pink:hover {
+      background: #c9184a;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(232,62,140,0.4);
+    }
+    
+    .btn-primary-green {
+      background: #1f7a4a;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(31,122,74,0.3);
+    }
+    
+    .btn-primary-green:hover {
+      background: #155a38;
+      transform: translateY(-3px);
+    }
+    
+    .btn-outline {
+      background: transparent;
+      color: #1a2a1a;
+      padding: 14px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 2px solid #1f7a4a;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s;
+    }
+    
+    .btn-outline:hover {
+      border-color: #e83e8c;
+      background: #fce4ec;
+      color: #e83e8c;
+      transform: translateY(-3px);
+    }
+    
+    .hero-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      animation: fadeInUp 0.8s ease;
+    }
+    
+    .hero-img-main {
+      grid-column: span 2;
+      border-radius: 24px;
+      overflow: hidden;
+      height: 200px;
+      box-shadow: 0 20px 35px -10px rgba(0,0,0,0.15);
+    }
+    
+    .hero-img-main img,
+    .hero-img-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-img-main:hover img,
+    .hero-img-small:hover img {
+      transform: scale(1.05);
+    }
+    
+    .hero-img-small {
+      border-radius: 20px;
+      overflow: hidden;
+      height: 140px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+    }
+    
+    .hero-stat {
+      background: linear-gradient(135deg, #1f7a4a, #155a38);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 140px;
+      transition: transform 0.3s;
+    }
+    
+    .hero-stat:hover {
+      transform: translateY(-5px);
+    }
+    
+    .hero-stat .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      color: #e83e8c;
+      font-weight: 700;
+    }
+    
+    .hero-stat .stat-label {
+      font-size: 10px;
+      color: rgba(255,255,255,0.7);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+    
+    /* ===== SERVICES PREVIEW SECTION ===== */
+    .services-preview {
+      padding: 70px 0;
+      background: #ffffff;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    
+    .section-tag-pink {
+      display: inline-block;
+      background: #e83e8c;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .section-tag-green {
+      display: inline-block;
+      background: #1f7a4a;
+      color: white;
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      color: #1a2a1a;
+    }
+    
+    .section-header h2 .pink {
+      color: #e83e8c;
+    }
+    
+    .section-header h2 .green {
+      color: #1f7a4a;
+    }
+    
+    .section-header p {
+      color: #6c757d;
+      max-width: 600px;
+      margin: 12px auto 0;
+    }
+    
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 20px;
+    }
+    
+    .preview-card {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 32px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+      transition: all 0.4s;
+      text-align: center;
+    }
+    
+    .preview-card:nth-child(1):hover {
+      transform: translateY(-8px);
+      border-color: #e83e8c;
+      box-shadow: 0 25px 40px -12px rgba(232,62,140,0.2);
+    }
+    
+    .preview-card:nth-child(2):hover {
+      transform: translateY(-8px);
+      border-color: #1f7a4a;
+      box-shadow: 0 25px 40px -12px rgba(31,122,74,0.2);
+    }
+    
+    .preview-card:nth-child(3):hover {
+      transform: translateY(-8px);
+      border-color: #e83e8c;
+      box-shadow: 0 25px 40px -12px rgba(232,62,140,0.2);
+    }
+    
+    .preview-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+    }
+    
+    .preview-icon.pink-bg {
+      background: #fce4ec;
+    }
+    
+    .preview-icon.green-bg {
+      background: #e8f5e9;
+    }
+    
+    .preview-icon svg {
+      width: 32px;
+      height: 32px;
+    }
+    
+    .preview-icon.pink-bg svg {
+      stroke: #e83e8c;
+    }
+    
+    .preview-icon.green-bg svg {
+      stroke: #1f7a4a;
+    }
+    
+    .preview-card h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    
+    .preview-card:nth-child(1) h3 {
+      color: #e83e8c;
+    }
+    
+    .preview-card:nth-child(2) h3 {
+      color: #1f7a4a;
+    }
+    
+    .preview-card:nth-child(3) h3 {
+      color: #e83e8c;
+    }
+    
+    .preview-card p {
+      color: #6c757d;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .preview-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    
+    .preview-card:nth-child(1) .preview-link {
+      color: #e83e8c;
+    }
+    
+    .preview-card:nth-child(2) .preview-link {
+      color: #1f7a4a;
+    }
+    
+    .preview-card:nth-child(3) .preview-link {
+      color: #e83e8c;
+    }
+    
+    .preview-link:hover {
+      gap: 10px;
+    }
+    
+    @media (max-width: 860px) {
+      .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 560px) {
+      .preview-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== NEW ULTRASOUND SERVICES SECTION ===== */
+    .new-services {
+      padding: 70px 0;
+      background: #f8faf8;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+    
+    .service-card {
+      background: #ffffff;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      border: 1px solid #f0f0f0;
+      transition: all 0.4s;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: #e83e8c;
+      box-shadow: 0 25px 40px -12px rgba(232,62,140,0.2);
+    }
+    
+    .service-icon svg {
+      width: 32px;
+      height: 32px;
+      stroke: #e83e8c;
+      stroke-width: 1.5;
+    }
+    
+    .service-icon {
+      width: 60px;
+      height: 60px;
+      background: #fce4ec;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    
+    .service-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1a2a1a;
+      margin-bottom: 12px;
+    }
+    
+    .service-card p {
+      color: #6c757d;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .service-features {
+      list-style: none;
+    }
+    
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: #5a6e5a;
+      margin-bottom: 10px;
+    }
+    
+    .service-features li svg {
+      width: 16px;
+      height: 16px;
+      stroke: #1f7a4a;
+      stroke-width: 2;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 700px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== FEATURES GRID ===== */
+    .features-section {
+      padding: 70px 0;
+      background: #ffffff;
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    
+    .feature-card {
+      text-align: center;
+      padding: 28px 16px;
+      background: #faf8fa;
+      border-radius: 20px;
+      transition: all 0.3s;
+      border: 1px solid #f0f0f0;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-6px);
+      border-color: #e83e8c;
+      box-shadow: 0 10px 30px rgba(232,62,140,0.1);
+    }
+    
+    .feature-card svg {
+      width: 32px;
+      height: 32px;
+      stroke: #1f7a4a;
+      stroke-width: 1.5;
+      margin-bottom: 16px;
+    }
+    
+    .feature-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a2a1a;
+      margin-bottom: 8px;
+    }
+    
+    .feature-card p {
+      font-size: 0.8rem;
+      color: #6c757d;
+    }
+    
+    @media (max-width: 860px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    @media (max-width: 560px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    /* ===== STEPS ===== */
+    .steps-section {
+      padding: 70px 0;
+      background: linear-gradient(135deg, #1a2a1a, #0f1a0f);
+      color: white;
+    }
+    
+    .steps-section .section-header h2 {
+      color: white;
+    }
+    
+    .steps-section .section-header p {
+      color: rgba(255,255,255,0.7);
+    }
+    
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 48px;
+    }
+    
+    .step-card {
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .step-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .step-number {
+      width: 50px;
+      height: 50px;
+      background: rgba(232,62,140,0.2);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin: 0 auto 18px;
+      color: #e83e8c;
+    }
+    
+    .step-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+    
+    .step-card p {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+    
+    @media (max-width: 860px) {
+      .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== CTA ===== */
+    .cta-section {
+      padding: 64px 0;
+      background: linear-gradient(135deg, #fce4ec, #e8f5e9);
+      text-align: center;
+    }
+    
+    .cta-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      color: #1a2a1a;
+      margin-bottom: 16px;
+    }
+    
+    .cta-section h2 .pink {
+      color: #e83e8c;
+    }
+    
+    .cta-section h2 .green {
+      color: #1f7a4a;
+    }
+    
+    .cta-section p {
+      color: #5a6e5a;
+      margin-bottom: 28px;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a2a1a;
+      color: rgba(255,255,255,0.7);
+      padding: 50px 0 30px;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-logo .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 12px;
+    }
+    
+    .footer-logo .brand .pink {
+      color: #e83e8c;
+    }
+    
+    .footer-logo .brand .green {
+      color: #1f7a4a;
+    }
+    
+    .footer-logo p {
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    
+    .footer-col h4 {
+      color: white;
+      font-size: 1rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .footer-col ul {
+      list-style: none;
+    }
+    
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+    
+    .footer-col ul li a:hover {
+      color: #e83e8c;
+    }
+    
+    .footer-social {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    
+    .footer-social a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    
+    .footer-social a:hover {
+      background: #e83e8c;
+      transform: translateY(-3px);
+    }
+    
+    .footer-social a svg {
+      width: 18px;
+      height: 18px;
+      stroke: white;
+      fill: none;
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.8rem;
+    }
+    
+    @media (max-width: 860px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    @media (max-width: 560px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* ===== FLOATING ELEMENTS ===== */
+    .floating-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25D366;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+      z-index: 90;
+      transition: all 0.3s;
+      animation: waPulse 2s infinite;
+    }
+    
+    @keyframes waPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(37,211,102,0.3);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 6px 25px rgba(37,211,102,0.5);
+      }
+    }
+    
+    .floating-wa:hover {
+      transform: scale(1.1);
+    }
+    
+    .floating-wa svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+    }
+    
+    .scroll-top {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      background: #1f7a4a;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      z-index: 90;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(31,122,74,0.3);
+    }
+    
+    .scroll-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .scroll-top:hover {
+      transform: translateY(-3px);
+      background: #e83e8c;
+    }
+    
+    .scroll-top svg {
+      width: 20px;
+      height: 20px;
+      stroke: white;
+      stroke-width: 2;
+    }
+    
+    /* Animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+    
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
-<!-- WA & PHONE SVG SYMBOLS -->
-<svg style="display:none">
-  <symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
-  <symbol id="ph" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C9.6 21 3 14.4 3 6c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></symbol>
-</svg>
-
-<div id="toast"></div>
-<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Top">
-  <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
-</button>
-
-<!-- ══ NAV ══ -->
-<nav id="navbar">
-  <div class="nav-logo" onclick="goPage('home')">
-    <img src="https://i.ibb.co/HLj4dP2s/5dd38ab5-ef55-486b-a843-2b580240d692.png" alt="RoyalHope" onerror="this.style.display='none'">
-    <div class="logo-txt"><div class="brand">RoyalHope</div><div class="sub">Home Based Care</div></div>
-  </div>
-  <ul class="nav-tabs">
-    <li><span class="nav-tab active" id="tab-home" onclick="goPage('home')">Home</span></li>
-    <li><span class="nav-tab" id="tab-book" onclick="goPage('book')">
-      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Care
-    </span></li>
-    <li><span class="nav-tab" id="tab-services" onclick="goPage('services')">Services</span></li>
-    <li><span class="nav-tab" id="tab-about" onclick="goPage('about')">About</span></li>
-    <li><span class="nav-tab" id="tab-coverage" onclick="goPage('coverage')">Coverage</span></li>
-  </ul>
-  <div class="nav-calls">
-    <a class="cpill cpill-g" href="tel:+254746111400"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>0746 111 400</a>
-    <a class="cpill cpill-n" href="tel:+254791597351"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>0791 597 351</a>
-  </div>
-  <button class="hamburger" onclick="toggleMob()" aria-label="Menu"><span></span><span></span><span></span></button>
-</nav>
-
-<!-- MOBILE MENU -->
-<div class="mob-menu" id="mob">
-  <div class="mob-row" onclick="goPage('home');closeMob()"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</div>
-  <div class="mob-row" onclick="goPage('book');closeMob()"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a Care Visit</div>
-  <div class="mob-row" onclick="goPage('services');closeMob()"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>Our Services</div>
-  <div class="mob-row" onclick="goPage('about');closeMob()"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>About Us</div>
-  <div class="mob-row" onclick="goPage('coverage');closeMob()"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Coverage Area</div>
-  <div class="mob-calls">
-    <a class="mob-cbtn" style="background:var(--green)" href="tel:+254746111400"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Call Ann — 0746 111 400</a>
-    <a class="mob-cbtn" style="background:var(--navy)" href="tel:+254791597351"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Call Solomon — 0791 597 351</a>
+<!-- NOTICE BANNER (Pink + Green gradient) -->
+<div class="notice-banner" id="noticeBanner">
+  <div class="notice-content">
+    <span class="notice-badge">NEW SERVICE</span>
+    <span class="notice-text">We've added <strong>Obstetrics Ultrasound</strong> & <strong>Abdominal/Pelvic Ultrasound</strong> — now available as home care services!</span>
+    <button class="notice-close" onclick="closeBanner()">✕</button>
   </div>
 </div>
 
-<!-- ══════════ PAGE 1: HOME ══════════ -->
-<div class="page active" id="page-home"><div class="page-body">
-  <div class="hero">
-    <div class="hero-inner">
+<!-- SCROLLING TICKER BAR -->
+<div class="ticker-bar">
+  <div class="ticker-track">
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text"><strong>NEW:</strong> Obstetrics Ultrasound at Home</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text"><strong>NEW:</strong> Abdominal & Pelvic Ultrasound</span></div>
+    <div class="ticker-item"><span class="ticker-dot-green"></span><span class="ticker-text">📞 Same-day appointments available — Call 0746 111 400</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">📍 Serving Nairobi & Kiambu County</span></div>
+    <div class="ticker-item"><span class="ticker-dot-green"></span><span class="ticker-text">💬 WhatsApp us for instant booking</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">🏠 Professional care at your doorstep</span></div>
+    <!-- Duplicate for seamless loop -->
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text"><strong>NEW:</strong> Obstetrics Ultrasound at Home</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text"><strong>NEW:</strong> Abdominal & Pelvic Ultrasound</span></div>
+    <div class="ticker-item"><span class="ticker-dot-green"></span><span class="ticker-text">📞 Same-day appointments available — Call 0746 111 400</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">📍 Serving Nairobi & Kiambu County</span></div>
+    <div class="ticker-item"><span class="ticker-dot-green"></span><span class="ticker-text">💬 WhatsApp us for instant booking</span></div>
+    <div class="ticker-item"><span class="ticker-dot"></span><span class="ticker-text">🏠 Professional care at your doorstep</span></div>
+  </div>
+</div>
+
+<!-- NAVIGATION -->
+<nav>
+  <div class="nav-container">
+    <div class="logo" onclick="location.href='index.html'">
+      <img src="https://i.ibb.co/67G53sWt/637788859-893709780083337-3836413152566769247-n.webp" alt="Royal Hope">
+      <div class="logo-text">
+        <div class="brand">ROYAL <span class="pink">HOPE</span> <span class="green">HOME CARE</span></div>
+        <div class="tagline">Professional Care at the Comfort of Home</div>
+      </div>
+    </div>
+    
+    <div class="nav-links">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="book.html" class="nav-link">Book</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="tel:+254746111400" class="nav-phone">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        0746 111 400
+      </a>
+    </div>
+    
+    <button class="menu-btn" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="nav-link active">Home</a>
+    <a href="services.html" class="nav-link">Services</a>
+    <a href="book.html" class="nav-link">Book</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="tel:+254746111400" class="nav-phone">📞 Ann — 0746 111 400</a>
+    <a href="tel:+254791597351" class="nav-phone" style="background: #e83e8c; margin-top: 8px;">📞 Solomon — 0791 597 351</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
       <div>
-        <div class="hero-ey">Professional Home Medical Care · Nairobi &amp; Kiambu</div>
-        <h1>Care Your Family<br>Deserves, <em>At Home</em></h1>
-        <p class="hero-sub">Qualified nurses and compassionate caregivers at your door — for patients of all ages, 24 hours a day across Nairobi and Kiambu County.</p>
-        <div class="hero-btns">
-          <span class="btn btn-g" onclick="goPage('book')"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>Book a Care Visit</span>
-          <span class="btn btn-o" onclick="goPage('services')">View Our Services</span>
+        <div class="hero-badge">🏠 Professional Care at Home</div>
+        <h1>Professional Care.<br><span class="pink">Compassionate Hearts.</span><br><span class="green">Trusted Every Day.</span></h1>
+        <p>Qualified nurses and now ultrasound services — delivered to your home in Nairobi & Kiambu County. Safe, convenient, and compassionate.</p>
+        <div class="hero-buttons">
+          <a href="book.html" class="btn-primary-pink">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book a Care Visit
+          </a>
+          <a href="services.html" class="btn-outline">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            All Services
+          </a>
         </div>
       </div>
-      <div>
-        <div class="him">
-          <div class="him-top"><img src="https://i.ibb.co/ZphpLTyG/5-steps-to-getting-help-from-a-home-care-agency-mj-Evv-QJWQJf-LE1-JL.jpg" alt="RoyalHope home care" loading="eager"></div>
-          <div class="him-bot"><img src="https://i.ibb.co/BHYM6W7w/homecaree3.jpg" alt="Home nursing" loading="eager"></div>
-          <div class="him-stat"><div class="sn">24/7</div><div class="sl">Available</div><div class="sd"></div><div class="sn">All Ages</div><div class="sl">Welcomed</div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="trust">
-    <div class="trust-i"><div class="t-n">24/7</div><div class="t-l">Always Available</div></div>
-    <div class="trust-i"><div class="t-n">100%</div><div class="t-l">Certified Staff</div></div>
-    <div class="trust-i"><div class="t-n">9+</div><div class="t-l">Services</div></div>
-    <div class="trust-i"><div class="t-n">All Ages</div><div class="t-l">Patients Served</div></div>
-  </div>
-
-  <div class="sec bg-w">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">What We Offer</div><h2 class="sec-h">Our Medical Services</h2><p class="sec-sub">Professional care delivered at home — tailored to each patient's specific needs.</p></div>
-      <div class="svc-grid" id="homeSvcs" style="margin-top:34px"></div>
-      <div style="text-align:center;margin-top:26px"><span class="btn btn-g" onclick="goPage('services')">View All 9 Services →</span></div>
-    </div>
-  </div>
-
-  <div class="sec bg-g">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">Simple Process</div><h2 class="sec-h">How It Works</h2><p class="sec-sub">Getting started takes a few minutes. We'll have a nurse at your door fast.</p></div>
-      <div class="steps" style="margin-top:34px">
-        <div class="step rv"><div class="step-n">1</div><h3>Contact Us</h3><p>Call, WhatsApp, or fill our booking form. Tell us your area and the patient's needs.</p></div>
-        <div class="step rv d1"><div class="step-n">2</div><h3>Free Consultation</h3><p>A coordinator builds a personalised care plan, working with your doctor if needed.</p></div>
-        <div class="step rv d2"><div class="step-n">3</div><h3>Meet Your Caregiver</h3><p>We match and introduce the right nurse before care begins.</p></div>
-        <div class="step rv d3"><div class="step-n">4</div><h3>Care at Home</h3><p>Professional care on your schedule. We're reachable any time you need us.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sec bg-w">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">Families Say</div><h2 class="sec-h">Real Stories, Real Care</h2><p class="sec-sub">Nairobi and Kiambu families trust RoyalHope to care for their loved ones.</p></div>
-      <div class="testi-grid" style="margin-top:34px">
-        <div class="testi-card rv"><div class="stars">★★★★★</div><p class="testi-q">"When my mother was discharged after hip surgery we were terrified. The RoyalHope nurse arrived the very next morning and within two weeks she was walking again. Absolutely outstanding."</p><div class="testi-auth"><div class="testi-av">MW</div><div class="testi-name"><strong>Mary W.</strong><span>Nairobi — Post-Surgery Care</span></div></div></div>
-        <div class="testi-card rv d1"><div class="stars">★★★★★</div><p class="testi-q">"My father has diabetes and hypertension. Managing his medication was overwhelming. RoyalHope took over completely — professional, punctual, and truly caring. I can breathe again."</p><div class="testi-auth"><div class="testi-av">JK</div><div class="testi-name"><strong>James K.</strong><span>Kiambu — Chronic Illness Care</span></div></div></div>
-        <div class="testi-card rv d2"><div class="stars">★★★★★</div><p class="testi-q">"I was on dialysis and the hospital journey was too much for me. RoyalHope came home for my follow-up and fistula care. The difference was night and day. Genuinely kind, highly professional."</p><div class="testi-auth"><div class="testi-av">PN</div><div class="testi-name"><strong>Peter N.</strong><span>Westlands — Dialysis Follow-up</span></div></div></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-band">
-    <h2>Ready? We're Just a Message Away.</h2>
-    <p>Reach out now — we can arrange care within hours across Nairobi and Kiambu County.</p>
-    <div class="cta-btns">
-      <a class="cta-wa" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>WhatsApp Ann</a>
-      <a class="cta-wa" style="background:#1a9e4e" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>WhatsApp Solomon</a>
-      <a class="cta-call" href="tel:+254746111400"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Call Now</a>
-    </div>
-  </div>
-</div></div>
-
-<!-- ══════════ PAGE 2: BOOK ══════════ -->
-<div class="page" id="page-book"><div class="page-body">
-  <div class="book-hero"><div class="wrap"><div class="eyebrow">Book a Visit</div><h1>Get Care for Your Loved One</h1><p>WhatsApp us for the fastest response — or call directly, or fill the form below.</p></div></div>
-  <div class="sec bg-g">
-    <div class="wrap">
-      <div class="book-grid">
-        <div class="rv">
-          <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:10px">Chat or Call Us</h3>
-          <p style="color:var(--muted);font-size:.93rem;line-height:1.74;margin-bottom:20px">Tap to open WhatsApp or dial directly — we respond within minutes.</p>
-          <div class="wa-contacts">
-            <a class="wa-c" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20would%20like%20home%20care." target="_blank">
-              <div class="wa-ic"><svg viewBox="0 0 24 24"><use href="#wa"/></svg></div>
-              <div class="wa-ct"><strong>Ann Njoki</strong><span>0746 111 400 — WhatsApp</span></div>
-              <span class="wa-arr">›</span>
-            </a>
-            <a class="wa-c" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20would%20like%20home%20care." target="_blank">
-              <div class="wa-ic"><svg viewBox="0 0 24 24"><use href="#wa"/></svg></div>
-              <div class="wa-ct"><strong>Solomon Wanjumbi</strong><span>0791 597 351 — WhatsApp</span></div>
-              <span class="wa-arr">›</span>
-            </a>
-          </div>
-          <div class="call-btn-row">
-            <a class="call-link" style="background:var(--green)" href="tel:+254746111400"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Call Ann — 0746 111 400</a>
-            <a class="call-link" style="background:var(--navy)" href="tel:+254791597351"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Call Solomon — 0791 597 351</a>
-          </div>
-          <div class="note-box">
-            <h4>We Respond Quickly</h4>
-            <p>A coordinator reaches out to discuss needs, confirm your area, and give clear pricing — no pressure, no obligation.</p>
-          </div>
-        </div>
-        <div class="form-card rv d1">
-          <h3>Send a Booking Request</h3>
-          <div class="fg-row">
-            <div class="fg"><label>Full Name *</label><input type="text" id="fn" placeholder="Your full name" autocomplete="name"></div>
-            <div class="fg"><label>Phone Number *</label><input type="tel" id="fp" placeholder="07XX XXX XXX" autocomplete="tel"></div>
-          </div>
-          <div class="fg"><label>Your Location / Area *</label><input type="text" id="floc" placeholder="e.g. Westlands, Karen, Kiambu Town…"></div>
-          <div class="fg"><label>Type of Care Needed *</label>
-            <select id="fs">
-              <option value="">Select a service…</option>
-              <option>Home Nursing Care</option><option>Elderly Care &amp; Daily Support</option>
-              <option>Chronic Illness Management</option><option>Wound Dressing &amp; Catheter Care</option>
-              <option>Dialysis Follow-up &amp; AV Fistula Care</option><option>Post-Hospital Discharge Care</option>
-              <option>Medication Administration</option><option>Palliative &amp; Supportive Care</option>
-              <option>Vital Signs Monitoring</option><option>Not Sure / Other</option>
-            </select>
-          </div>
-          <div class="fg-row">
-            <div class="fg"><label>Patient Age</label>
-              <select id="fa"><option value="">Select…</option><option>Child (0–12)</option><option>Teen (13–17)</option><option>Adult (18–59)</option><option>Elderly (60+)</option></select>
-            </div>
-            <div class="fg"><label>When Needed?</label>
-              <select id="fw"><option value="">Select…</option><option>As soon as possible</option><option>Within 24 hours</option><option>Within a few days</option><option>This week</option><option>Planning ahead</option></select>
-            </div>
-          </div>
-          <div class="fg"><label>Additional Details</label><textarea id="fno" placeholder="Patient condition, nearest landmark, preferred visit times…"></textarea></div>
-          <button class="form-btn" onclick="sendBooking()"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>Send via WhatsApp</button>
-          <p class="form-note">Sent to Ann (0746 111 400). We reply within minutes.</p>
+      <div class="hero-images">
+        <div class="hero-img-main"><img src="https://i.ibb.co/ZphpLTyG/5-steps-to-getting-help-from-a-home-care-agency-mj-Evv-QJWQJf-LE1-JL.jpg" alt="Home care professional"></div>
+        <div class="hero-img-small"><img src="https://i.ibb.co/BHYM6W7w/homecaree3.jpg" alt="Nurse at home"></div>
+        <div class="hero-stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Available</div>
+          <div style="width: 20px; height: 1px; background: rgba(255,255,255,0.2); margin: 6px 0;"></div>
+          <div class="stat-number">All Ages</div>
+          <div class="stat-label">Welcomed</div>
         </div>
       </div>
     </div>
   </div>
-</div></div>
+</section>
 
-<!-- ══════════ PAGE 3: SERVICES ══════════ -->
-<div class="page" id="page-services"><div class="page-body">
-  <div class="sec bg-w">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">What We Offer</div><h2 class="sec-h">Our 9 Medical Services</h2><p class="sec-sub">Every service tailored and delivered professionally in the comfort of your home.</p></div>
-      <div class="svc-grid" style="margin-top:34px">
-        <div class="svc-card rv"><div class="svc-img"><img src="https://i.ibb.co/2zYcHdz/Convalescent-Care-2x.png" alt="Home Nursing Care" loading="lazy"></div><div class="svc-body"><h3>Home Nursing Care</h3><p>Registered nurses for assessments, treatment, wound care, injections, and health monitoring at home.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv d1"><div class="svc-img"><img src="https://i.ibb.co/tpPhM1L0/caregiver-assisting-senior-african-american-600nw-2679453823.webp" alt="Elderly Care" loading="lazy"></div><div class="svc-body"><h3>Elderly Care &amp; Daily Support</h3><p>Mobility, hygiene, meals, medication reminders, and companionship for elderly patients.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv d2"><div class="svc-img"><img src="https://i.ibb.co/4wz47yBQ/Chronic-Disease-Management-scaled.jpg" alt="Chronic Illness" loading="lazy"></div><div class="svc-body"><h3>Chronic Illness Management</h3><p>Ongoing care for diabetes, hypertension, heart and kidney disease — keeping conditions controlled.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv"><div class="svc-img"><img src="https://i.ibb.co/Tj6mYZs/Wound-Care.jpg" alt="Wound Care" loading="lazy"></div><div class="svc-body"><h3>Wound Dressing &amp; Catheter Care</h3><p>Sterile wound cleaning, dressing changes, and catheter management done hygienically at home.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv d1"><div class="svc-img"><img src="https://i.ibb.co/JFynydYw/101a26f3-5e7e-40b3-b50e-a355f81aa9f6.webp" alt="Dialysis Care" loading="lazy"></div><div class="svc-body"><h3>Dialysis Follow-up &amp; AV Fistula Care</h3><p>Home monitoring and AV fistula care for dialysis patients between hospital sessions.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv d2"><div class="svc-img"><img src="https://i.ibb.co/8DFwJtNC/origin.avif" alt="Post-Hospital Care" loading="lazy"></div><div class="svc-body"><h3>Post-Hospital Discharge Care</h3><p>Seamless recovery support after discharge — reducing re-admission risk with nursing and medication management.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv"><div class="svc-img"><img src="https://i.ibb.co/HpGcRm4J/Administer-drugs-appropriately.jpg" alt="Medication Administration" loading="lazy"></div><div class="svc-body"><h3>Medication Administration</h3><p>Accurate, on-schedule injections, IV therapy, and oral medications with side-effect monitoring.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv d1"><div class="svc-img"><img src="https://i.ibb.co/F4SM7BMR/istockphoto-1432338977-612x612.jpg" alt="Palliative Care" loading="lazy"></div><div class="svc-body"><h3>Palliative &amp; Supportive Care</h3><p>Comfort-focused care — pain management, emotional support, and dignity for patients with serious illness.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-        <div class="svc-card rv d2"><div class="svc-img"><img src="https://i.ibb.co/x8F5B6WL/65e8190e0e6e394879.webp" alt="Vital Signs" loading="lazy"></div><div class="svc-body"><h3>Vital Signs Monitoring</h3><p>Regular blood pressure, temperature, pulse, oxygen, and glucose monitoring with timely doctor reporting.</p><span class="svc-link" onclick="goPage('book')">Book this service →</span></div></div>
-      </div>
+<!-- SERVICES PREVIEW SECTION (3 core services) -->
+<section class="services-preview">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag-pink">OUR SERVICES</div>
+      <h2>Professional <span class="green">Home Care</span> <span class="pink">Services</span></h2>
+      <p>Quality healthcare delivered to your doorstep by certified professionals</p>
     </div>
-  </div>
-
-  <!-- Photo strip with only the 4th image you specified -->
-  <div class="photo-strip">
-    <div class="photo-strip-div"><img src="https://i.ibb.co/PGS6xCqX/360-Family-Care-logo-jpeg.jpg" alt="Family care" loading="lazy"></div>
-  </div>
-
-  <div class="cta-band">
-    <h2>Ready to Book a Service?</h2>
-    <p>Contact us now — we'll arrange care and give you clear, transparent pricing.</p>
-    <div class="cta-btns">
-      <a class="cta-wa" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>WhatsApp Us</a>
-      <span class="cta-call" onclick="goPage('book')">Fill Booking Form</span>
-    </div>
-  </div>
-</div></div>
-
-<!-- ══════════ PAGE 4: ABOUT ══════════ -->
-<div class="page" id="page-about"><div class="page-body">
-  <div class="sec bg-w">
-    <div class="wrap">
-      <div class="about-grid">
-        <div class="rv">
-          <div class="about-img-wrap"><img src="https://i.ibb.co/5W6t9MXc/in-home-health-care-types-1024x585.webp" alt="RoyalHope home care" loading="lazy"></div>
+    
+    <div class="preview-grid">
+      <!-- Service 1: Home Nursing -->
+      <div class="preview-card animate-on-scroll">
+        <div class="preview-icon pink-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1010 10 10 10 0 00-10-10zM12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
         </div>
-        <div class="rv d1">
-          <div class="eyebrow">Who We Are</div>
-          <h2 class="sec-h">Bringing Royal Care to Every Home in Nairobi</h2>
-          <p class="about-body"><strong>RoyalHope Home Based Care</strong> was founded to make professional, hospital-quality medical care available to every Kenyan family — delivered to the comfort of their own home.</p>
-          <p class="about-body">Healing happens best in familiar surroundings. Our team of <strong>trained, certified nurses and caregivers</strong> come directly to your door — whether recovering from surgery, managing a chronic illness, or supporting an elderly parent.</p>
-          <p class="about-body">We serve all ages across <strong>Nairobi and Kiambu County</strong>, coordinating closely with your doctors and hospitals throughout.</p>
-          <div class="vals">
-            <div class="val-i"><div class="val-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="val-l">Compassion First</div></div>
-            <div class="val-i"><div class="val-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="val-l">Certified Nurses</div></div>
-            <div class="val-i"><div class="val-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="val-l">Safe Practices</div></div>
-            <div class="val-i"><div class="val-dot"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><div class="val-l">Affordable Pricing</div></div>
-          </div>
+        <h3>Home Nursing Care</h3>
+        <p>Registered nurses for assessments, treatment, wound care, injections, and health monitoring at home.</p>
+        <a href="services.html" class="preview-link">Learn more →</a>
+      </div>
+      
+      <!-- Service 2: Elderly Care -->
+      <div class="preview-card animate-on-scroll">
+        <div class="preview-icon green-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Elderly Care & Support</h3>
+        <p>Mobility, hygiene, meals, medication reminders, and companionship for elderly patients.</p>
+        <a href="services.html" class="preview-link">Learn more →</a>
+      </div>
+      
+      <!-- Service 3: Chronic Illness Management -->
+      <div class="preview-card animate-on-scroll">
+        <div class="preview-icon pink-bg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M12 4v16M3.5 3.5L20.5 20.5"/><circle cx="12" cy="12" r="2.5"/></svg>
+        </div>
+        <h3>Chronic Illness Management</h3>
+        <p>Ongoing care for diabetes, hypertension, heart and kidney disease — keeping conditions controlled.</p>
+        <a href="services.html" class="preview-link">Learn more →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEW ULTRASOUND SERVICES (Full section) -->
+<section class="new-services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag-green">EXCITING NEWS — NEW SERVICES ADDED</div>
+      <h2>Now Available as a <span class="pink">Home Care Service</span></h2>
+      <p>Professional ultrasound imaging — no more hospital waiting rooms</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1010 10 10 10 0 00-10-10zM12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+        </div>
+        <h3>Obstetrics Ultrasound</h3>
+        <p>Safe, accurate and comfortable pregnancy scans in the comfort of your home.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Pregnancy confirmation & dating</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Fetal growth monitoring</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Placenta position check</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Gender reveal (where permitted)</li>
+        </ul>
+      </div>
+      
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 12H4M12 4v16M3.5 3.5L20.5 20.5"/><circle cx="12" cy="12" r="2.5"/></svg>
+        </div>
+        <h3>Abdominal & Pelvic Ultrasound</h3>
+        <p>Accurate imaging for abdominal and pelvic health — done where you are.</p>
+        <ul class="service-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Liver, kidney & gallbladder scan</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Pelvic organ assessment</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Bladder & prostate evaluation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>Fast results & expert interpretation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag-pink">WHY CHOOSE US</div>
+      <h2>Care You Can <span class="green">Trust</span></h2>
+      <p>We bring quality healthcare to your doorstep</p>
+    </div>
+    
+    <div class="features-grid">
+      <div class="feature-card animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <h4>Home Comfort</h4>
+        <p>Receive quality care at home</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1010 10 10 10 0 00-10-10zM12 6v6l4 2"/></svg>
+        <h4>Expert Care</h4>
+        <p>Skilled professionals you can trust</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        <h4>Convenient</h4>
+        <p>Flexible & stress-free</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        <h4>Compassionate</h4>
+        <p>We treat you like family</p>
+      </div>
+      <div class="feature-card animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+        <h4>Private & Safe</h4>
+        <p>Your privacy our priority</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="steps-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag-green">SIMPLE PROCESS</div>
+      <h2>How to Get Care</h2>
+      <p>Getting started takes just a few minutes</p>
+    </div>
+    
+    <div class="steps-grid">
+      <div class="step-card animate-on-scroll">
+        <div class="step-number">1</div>
+        <h4>Contact Us</h4>
+        <p>Call or WhatsApp — we're here 24/7</p>
+      </div>
+      <div class="step-card animate-on-scroll">
+        <div class="step-number">2</div>
+        <h4>Free Consultation</h4>
+        <p>We listen and create a care plan</p>
+      </div>
+      <div class="step-card animate-on-scroll">
+        <div class="step-number">3</div>
+        <h4>Schedule Visit</h4>
+        <p>Choose a time that works for you</p>
+      </div>
+      <div class="step-card animate-on-scroll">
+        <div class="step-number">4</div>
+        <h4>Care at Home</h4>
+        <p>Professional care at your doorstep</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Book Your <span class="pink">Ultrasound at Home</span> <span class="green">Today!</span></h2>
+    <p>Call or WhatsApp us now for appointments & inquiries</p>
+    <div class="cta-buttons">
+      <a href="https://wa.me/254746111400?text=Hello%20Royal%20Hope%2C%20I%20want%20to%20book%20an%20ultrasound%20at%20home." target="_blank" class="btn-primary-green" style="background: #25D366;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Ann — 0746 111 400
+      </a>
+      <a href="tel:+254746111400" class="btn-primary-pink">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call Ann Now
+      </a>
+    </div>
+    <p style="margin-top: 24px; font-size: 0.85rem;">Solomon: <a href="tel:+254791597351" style="color: #e83e8c; font-weight: 600;">0791 597 351</a></p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-logo">
+        <div class="brand">ROYAL <span class="pink">HOPE</span> <span class="green">HOME CARE</span></div>
+        <p>Professional Care at the Comfort of Home.<br>Serving Nairobi & Kiambu County.</p>
+        <div class="footer-social">
+          <a href="https://www.tiktok.com/@royal.hope.homecar" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.79a8.18 8.18 0 004.79 1.53V6.87a4.85 4.85 0 01-1.02-.18z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/royalhopehomebased" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.51"/></svg>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61588477980030" target="_blank">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
         </div>
       </div>
-    </div>
-  </div>
-
-  <div class="sec bg-g">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">Our Promise</div><h2 class="sec-h">Why Families Choose RoyalHope</h2><p class="sec-sub tc">Clinical excellence with genuine human warmth — every patient deserves royal care.</p></div>
-      <div class="why-grid" style="margin-top:34px">
-        <div class="why-card rv"><div class="why-dash"></div><h3>Qualified &amp; Certified Staff</h3><p>All nurses certified and registered with the Nursing Council of Kenya. Caregivers trained and continuously supervised.</p></div>
-        <div class="why-card rv d1"><div class="why-dash"></div><h3>Personalised Care Plans</h3><p>Every plan is custom-built around the patient's unique condition, personality, and home environment.</p></div>
-        <div class="why-card rv d2"><div class="why-dash"></div><h3>Transparent Pricing</h3><p>No surprises, no hidden fees. You receive a clear quote before any care begins.</p></div>
-        <div class="why-card rv"><div class="why-dash"></div><h3>Doctor Coordination</h3><p>We work directly with your doctor and hospital to ensure seamless, continuous care.</p></div>
-        <div class="why-card rv d1"><div class="why-dash"></div><h3>Available 24/7</h3><p>Health doesn't follow office hours. Our team is reachable day, night, weekends, and holidays.</p></div>
-        <div class="why-card rv d2"><div class="why-dash"></div><h3>Dignified &amp; Compassionate</h3><p>We treat every patient the way we'd want our own family treated — with patience, respect, and warmth.</p></div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="book.html">Book Appointment</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Home Nursing</a></li>
+          <li><a href="#">Obstetrics Ultrasound</a></li>
+          <li><a href="#">Abdominal Ultrasound</a></li>
+          <li><a href="#">Elderly Care</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li>📞 Ann: 0746 111 400</li>
+          <li>📞 Solomon: 0791 597 351</li>
+          <li>📍 Nairobi & Kiambu</li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <div class="sec bg-w">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">Common Questions</div><h2 class="sec-h">Answers Before You Call</h2></div>
-      <div class="faq-wrap" style="margin-top:34px">
-        <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">How quickly can a nurse come to our home?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-ans"><p>In most cases same day or within 24 hours — especially across Nairobi. For urgent needs, WhatsApp us directly for the fastest response.</p></div></div>
-        <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">Are your nurses officially certified?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-ans"><p>Yes. All nurses hold valid certifications registered with the Nursing Council of Kenya. Caregivers are trained, vetted, and supervised by our clinical lead on an ongoing basis.</p></div></div>
-        <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">Do you work with my current doctor or hospital?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-ans"><p>Absolutely. We coordinate with your existing doctor and hospital, follow medical instructions precisely, and report back on progress as needed.</p></div></div>
-        <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">What does a visit cost?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-ans"><p>Pricing depends on care type, duration, and frequency. We are fully transparent with no hidden fees. WhatsApp us for a clear, no-pressure quote.</p></div></div>
-        <div class="faq-item rv"><button class="faq-q" onclick="toggleFaq(this)">Do you care for children as well as the elderly?<svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-ans"><p>Yes — we serve all ages from newborns to elderly patients. Our team has experience across the full spectrum of care.</p></div></div>
-      </div>
-    </div>
-  </div>
-</div></div>
-
-<!-- ══════════ PAGE 5: COVERAGE ══════════ -->
-<div class="page" id="page-coverage"><div class="page-body">
-  <div class="sec bg-w">
-    <div class="wrap">
-      <div class="tc rv"><div class="eyebrow">Coverage</div><h2 class="sec-h">Where We Serve</h2><p class="sec-sub tc">We proudly serve Nairobi and Kiambu County. Not sure about your area? WhatsApp us to confirm.</p></div>
-      <div class="reg-grid" style="margin-top:34px">
-        <div class="reg-card rv"><div class="reg-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--green));display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">Nairobi CBD</div></div><div class="reg-info"><h4>Nairobi CBD</h4><p>City centre &amp; surrounds</p></div></div>
-        <div class="reg-card rv d1"><div class="reg-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--green));display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">Westlands</div></div><div class="reg-info"><h4>Westlands &amp; Parklands</h4><p>Upper Hill, Lavington</p></div></div>
-        <div class="reg-card rv d2"><div class="reg-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--green));display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">South Nairobi</div></div><div class="reg-info"><h4>South Nairobi</h4><p>Karen, Langata, Ngong Rd</p></div></div>
-        <div class="reg-card rv"><div class="reg-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--green));display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">East Nairobi</div></div><div class="reg-info"><h4>East Nairobi</h4><p>Eastleigh, Umoja, Buruburu</p></div></div>
-        <div class="reg-card rv d1"><div class="reg-img"><div style="width:100%;height:100%;background:linear-gradient(135deg,var(--navy),var(--green));display:flex;align-items:center;justify-content:center;color:white;font-weight:bold;">Kiambu County</div></div><div class="reg-info"><h4>Kiambu County</h4><p>Kiambu, Thika, Ruiru, Limuru</p></div></div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px" class="rv">
-        <div class="area-detail"><h4>Nairobi Areas We Cover</h4><p>CBD · Westlands · Parklands · Lavington · Upper Hill · Karen · Langata · Ngong Road · Eastleigh · Umoja · Buruburu · Kasarani · Ruaraka · Dagoretti · Kikuyu · Rongai · and more throughout Nairobi</p></div>
-        <div class="area-detail"><h4>Kiambu County</h4><p>Kiambu Town · Thika · Ruiru · Limuru · Githunguri · Gatundu · Lari · Kikuyu · Kabete · Juja · and all surrounding areas within the county</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="cta-band">
-    <h2>Not Sure if We Cover Your Area?</h2>
-    <p>WhatsApp us right now — we'll confirm in seconds.</p>
-    <div class="cta-btns">
-      <a class="cta-wa" href="https://wa.me/254746111400?text=Hi%20RoyalHope%2C%20I%20want%20to%20check%20if%20you%20cover%20my%20area." target="_blank"><svg viewBox="0 0 24 24"><use href="#wa"/></svg>Ask on WhatsApp</a>
-      <a class="cta-call" href="tel:+254746111400"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Call Ann Now</a>
-    </div>
-  </div>
-</div></div>
-
-<!-- ══ FOOTER ══ -->
-<footer id="site-footer">
-  <div class="foot-inner">
-    <div class="foot-top">
-      <div>
-        <div class="foot-logo-row">
-          <img src="https://i.ibb.co/HLj4dP2s/5dd38ab5-ef55-486b-a843-2b580240d692.png" alt="RoyalHope" onerror="this.style.display='none'">
-          <div class="foot-brand"><div class="nm">RoyalHope</div><div class="tg">Home Based Care</div></div>
-        </div>
-        <p class="foot-desc">Professional, compassionate home-based medical care for all ages across Nairobi and Kiambu County — 24 hours a day.</p>
-        <div class="foot-contacts">
-          <a href="tel:+254746111400"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Ann Njoki — 0746 111 400</a>
-          <a href="tel:+254791597351"><svg viewBox="0 0 24 24"><use href="#ph"/></svg>Solomon — 0791 597 351</a>
-        </div>
-      </div>
-      <div class="foot-col"><h4>Pages</h4><ul>
-        <li><a onclick="goPage('home')">Home</a></li>
-        <li><a onclick="goPage('book')">Book Care</a></li>
-        <li><a onclick="goPage('services')">Our Services</a></li>
-        <li><a onclick="goPage('about')">About Us</a></li>
-        <li><a onclick="goPage('coverage')">Coverage</a></li>
-      </ul></div>
-      <div class="foot-col"><h4>Services</h4><ul>
-        <li><a onclick="goPage('services')">Home Nursing</a></li>
-        <li><a onclick="goPage('services')">Elderly Care</a></li>
-        <li><a onclick="goPage('services')">Chronic Illness</a></li>
-        <li><a onclick="goPage('services')">Wound &amp; Catheter</a></li>
-        <li><a onclick="goPage('services')">Dialysis Follow-up</a></li>
-        <li><a onclick="goPage('services')">Post-Hospital Care</a></li>
-        <li><a onclick="goPage('services')">Medication Administration</a></li>
-        <li><a onclick="goPage('services')">Palliative Care</a></li>
-        <li><a onclick="goPage('services')">Vital Signs</a></li>
-      </ul></div>
-      <div class="foot-col"><h4>Coverage</h4><ul>
-        <li><a onclick="goPage('coverage')">Nairobi CBD</a></li>
-        <li><a onclick="goPage('coverage')">Westlands &amp; Parklands</a></li>
-        <li><a onclick="goPage('coverage')">Karen &amp; Langata</a></li>
-        <li><a onclick="goPage('coverage')">East Nairobi</a></li>
-        <li><a onclick="goPage('coverage')">Kiambu County</a></li>
-      </ul></div>
-    </div>
-    <hr class="foot-div">
-    <div class="foot-bottom">
-      <span>© 2025 RoyalHope Home Based Care. All rights reserved.</span>
-      <em>"Professional Care at the Comfort of Home"</em>
+    <div class="footer-bottom">
+      <p>© 2025 Royal Hope Home Based Care. Professional Care at the Comfort of Home.</p>
+      <p style="margin-top: 8px;">@royalhope.homecare</p>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING WA -->
-<div class="wa-fab">
-  <div class="wa-fab-menu" id="waMenu">
-    <a class="wa-opt" href="https://wa.me/254746111400?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank"><div class="wa-dot"><svg width="13" height="13" fill="white" viewBox="0 0 24 24"><use href="#wa"/></svg></div>Ann — 0746 111 400</a>
-    <a class="wa-opt" href="https://wa.me/254791597351?text=Hello%20RoyalHope%2C%20I%20need%20home%20care." target="_blank"><div class="wa-dot"><svg width="13" height="13" fill="white" viewBox="0 0 24 24"><use href="#wa"/></svg></div>Solomon — 0791 597 351</a>
-  </div>
-  <button class="wa-fab-btn" onclick="toggleWA()" aria-label="WhatsApp"><svg width="25" height="25" fill="white" viewBox="0 0 24 24"><use href="#wa"/></svg></button>
-</div>
+<!-- Floating Elements -->
+<a href="https://wa.me/254746111400?text=Hello%20Royal%20Hope%2C%20I%20need%20home%20care." target="_blank" class="floating-wa">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<a href="#" class="scroll-top" id="scrollTop">
+  <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+</a>
 
 <script>
-const PAGES=['home','book','services','about','coverage'];
-
-const SVC_PREVIEW=[
-  {img:'https://i.ibb.co/2zYcHdz/Convalescent-Care-2x.png',t:'Home Nursing Care',d:'Registered nurses for assessments, treatment, wound care and monitoring at home.'},
-  {img:'https://i.ibb.co/tpPhM1L0/caregiver-assisting-senior-african-american-600nw-2679453823.webp',t:'Elderly Care & Daily Support',d:'Mobility, hygiene, meals, medication reminders and companionship for elderly patients.'},
-  {img:'https://i.ibb.co/Tj6mYZs/Wound-Care.jpg',t:'Wound Dressing & Catheter Care',d:'Sterile wound cleaning, dressing changes and catheter management done hygienically at home.'}
-];
-
-function buildHomeSvcs(){
-  const g=document.getElementById('homeSvcs');
-  if(!g)return;
-  g.innerHTML=SVC_PREVIEW.map(s=>`
-    <div class="svc-card">
-      <div class="svc-img"><img src="${s.img}" alt="${s.t}" loading="lazy"></div>
-      <div class="svc-body"><h3>${s.t}</h3><p>${s.d}</p><span class="svc-link" onclick="goPage('services')">See all services →</span></div>
-    </div>`).join('');
-}
-
-function goPage(id){
-  PAGES.forEach(p=>{
-    document.getElementById('page-'+p).classList.toggle('active',p===id);
-    const t=document.getElementById('tab-'+p);
-    if(t)t.classList.toggle('active',p===id);
+  function closeBanner() {
+    document.getElementById('noticeBanner').style.display = 'none';
+  }
+  
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const btn = document.querySelector('.menu-btn');
+    if (menu && menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+      menu.classList.remove('open');
+    }
   });
-  window.scrollTo({top:0,behavior:'instant'});
-  setTimeout(observe,60);
-}
-
-function toggleMob(){document.getElementById('mob').classList.toggle('open')}
-function closeMob(){document.getElementById('mob').classList.remove('open')}
-document.addEventListener('click',e=>{
-  const mob=document.getElementById('mob');
-  if(mob.classList.contains('open')&&!e.target.closest('.mob-menu')&&!e.target.closest('.hamburger'))closeMob();
-});
-
-function toggleWA(){document.getElementById('waMenu').classList.toggle('open')}
-document.addEventListener('click',e=>{if(!e.target.closest('.wa-fab'))document.getElementById('waMenu').classList.remove('open');});
-
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>8);
-  document.getElementById('btt').classList.toggle('vis',window.scrollY>300);
-});
-
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item'),wasOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!wasOpen)item.classList.add('open');
-}
-
-function showToast(m){
-  const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),3000);
-}
-
-function sendBooking(){
-  const n=document.getElementById('fn').value.trim();
-  const p=document.getElementById('fp').value.trim();
-  const l=document.getElementById('floc').value.trim();
-  const s=document.getElementById('fs').value;
-  const a=document.getElementById('fa').value;
-  const w=document.getElementById('fw').value;
-  const no=document.getElementById('fno').value.trim();
-  if(!n||!p){alert('Please enter your name and phone number.');return;}
-  if(!l){alert('Please enter your location.');return;}
-  const msg=`Hello RoyalHope! I'd like to book a care visit.\n\n*Name:* ${n}\n*Phone:* ${p}\n*Location:* ${l}\n*Service:* ${s||'Not specified'}\n*Patient Age:* ${a||'Not specified'}\n*When:* ${w||'Not specified'}\n*Notes:* ${no||'None'}\n\nThank you!`;
-  window.open('https://wa.me/254746111400?text='+encodeURIComponent(msg),'_blank');
-  showToast("Opening WhatsApp — we'll reply shortly!");
-}
-
-let io;
-function observe(){
-  if(io)io.disconnect();
-  io=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});
-  },{threshold:0.07});
-  document.querySelectorAll('.page.active .rv:not(.vis)').forEach(el=>io.observe(el));
-}
-
-buildHomeSvcs();
-observe();
+  
+  const scrollTop = document.getElementById('scrollTop');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) {
+      scrollTop.classList.add('visible');
+    } else {
+      scrollTop.classList.remove('visible');
+    }
+  });
+  
+  scrollTop.addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+  
+  const animatedElements = document.querySelectorAll('.animate-on-scroll');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  
+  animatedElements.forEach(el => observer.observe(el));
+  
+  setTimeout(() => {
+    animatedElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        el.classList.add('visible');
+      }
+    });
+  }, 100);
 </script>
 </body>
 </html>
